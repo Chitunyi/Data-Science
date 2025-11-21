@@ -223,7 +223,7 @@ class GNNClassifier(torch.nn.Module):
         return x  
 
 # -----------------------------
-#  4. Exp
+#  Exp
 # -----------------------------
 import glob
 from sklearn.metrics import f1_score
