@@ -1,0 +1,1254 @@
+Experiment Log
+================
+
+==============================
+Ego ID: 239
+Micro-F1: 0.6842 | Micro-AUC: 0.8274
+
+[Link Inference Attack - Ego 239]
+  Avg Similarity (Connected)   : 0.9549
+  Avg Similarity (Unconnected) : 0.4939
+  => Attack AUC: 0.9060
+
+[Explanation for Ego 239]
+  Circle_0: locale;1 (0.39), gender;0 (0.35), education;type;1 (0.31), education;type;0 (0.17), work;start_date;2 (0.09)
+  Circle_1: locale;1 (0.47), education;type;1 (0.36), gender;0 (0.33), education;type;0 (0.31), gender;1 (0.16)
+  Circle_2: gender;0 (0.17), education;type;1 (0.15), locale;1 (0.15), education;type;0 (0.09), languages;id;62 (0.04)
+  Circle_3: locale;1 (0.23), gender;0 (0.18), education;type;1 (0.14), education;type;0 (0.11), work;start_date;2 (0.09)
+
+==============================
+Ego ID: 345
+Micro-F1: 0.9009 | Micro-AUC: 0.9903
+
+[Link Inference Attack - Ego 345]
+  Avg Similarity (Connected)   : 0.9701
+  Avg Similarity (Unconnected) : 0.5281
+  => Attack AUC: 0.9067
+
+[Explanation for Ego 345]
+  Circle_0: locale;8 (0.01), gender;1 (0.01), education;type;1 (0.00), education;classes;with;name;129 (0.00), work;employer;name;336 (-0.00)
+  Circle_1: locale;8 (0.19), education;type;0 (0.12), gender;1 (0.11), gender;0 (0.08), location;name;96 (0.05)
+  Circle_2: education;type;0 (0.37), locale;8 (0.35), gender;1 (0.34), education;school;name;375 (0.29), education;school;id;384 (0.29)
+  Circle_3: education;type;0 (0.10), gender;1 (0.08), education;type;1 (0.07), locale;1 (0.07), gender;0 (0.04)
+  Circle_4: locale;8 (0.11), education;type;0 (0.10), gender;1 (0.07), gender;0 (0.05), work;start_date;2 (0.02)
+  Circle_5: locale;8 (0.08), education;type;0 (0.05), gender;1 (0.04), gender;0 (0.03), education;school;name;493 (-0.00)
+  Circle_6: location;id;122 (-0.07), birthday;403 (0.02), locale;8 (0.01), gender;1 (0.00), education;school;id;474 (0.00)
+
+==============================
+Ego ID: 611
+Micro-F1: 0.6491 | Micro-AUC: 0.8860
+
+[Link Inference Attack - Ego 611]
+  Avg Similarity (Connected)   : 0.9828
+  Avg Similarity (Unconnected) : 0.6523
+  => Attack AUC: 0.9527
+
+[Explanation for Ego 611]
+  Circle_0: gender;0 (0.11), work;employer;name;449 (-0.06), education;type;0 (0.05), locale;0 (0.05), locale;2 (0.04)
+  Circle_1: gender;0 (0.24), locale;1 (0.19), locale;0 (0.14), education;type;0 (0.09), education;type;1 (0.08)
+  Circle_2: location;name;163 (0.04), locale;1 (0.03), gender;1 (0.01), gender;0 (0.01), id;660 (0.00)
+  Circle_3: education;year;name;32 (0.04), education;school;name;568 (-0.03), work;employer;id;378 (-0.03), locale;2 (0.02), name;757 (-0.01)
+  Circle_4: education;school;id;562 (-0.23), education;type;0 (0.06), work;start_date;112 (0.05), gender;1 (0.05), education;school;name;679 (0.03)
+  Circle_5: gender;0 (0.11), locale;0 (0.11), id;768 (0.04), education;type;1 (0.03), education;type;0 (0.03)
+  Circle_6: education;with;id;47 (0.09), hometown;name;197 (0.07), locale;2 (0.07), gender;0 (0.07), gender;1 (0.05)
+  Circle_7: education;school;id;646 (-0.13), work;employer;id;357 (-0.05), id;623 (0.01), locale;1 (0.01), last_name;554 (-0.01)
+  Circle_8: work;employer;id;528 (0.25), education;school;id;631 (0.08), location;id;149 (0.05), work;position;id;200 (-0.01), gender;1 (0.01)
+  Circle_9: last_name;628 (-0.06), locale;2 (0.05), gender;0 (0.02), gender;1 (0.02), education;concentration;id;7 (-0.02)
+
+==============================
+Ego ID: 1357
+Micro-F1: 0.0769 | Micro-AUC: 0.8906
+
+[Link Inference Attack - Ego 1357]
+  Avg Similarity (Connected)   : 0.9845
+  Avg Similarity (Unconnected) : 0.8508
+  => Attack AUC: 0.9269
+
+[Explanation for Ego 1357]
+  Circle_0: name;1499 (0.08), education;school;id;1310 (-0.03), education;school;name;16 (-0.02), name;1433 (0.02), name;1567 (-0.01)
+  Circle_1: education;school;id;1207 (-0.03), id;1550 (-0.03), name;1412 (0.02), education;with;id;184 (0.01), work;employer;name;1183 (0.01)
+  Circle_2: first_name;1113 (0.05), education;school;id;1307 (0.04), education;classes;id;186 (0.03), name;1577 (-0.03), birthday;890 (-0.02)
+  Circle_3: birthday;423 (0.05), name;1368 (0.03), birthday;742 (0.03), hometown;name;368 (-0.03), education;classes;from;name;60 (0.02)
+  Circle_4: last_name;1157 (0.07), education;classes;id;235 (0.03), work;position;id;564 (-0.03), hometown;name;407 (-0.02), work;position;name;544 (0.02)
+  Circle_5: last_name;1133 (0.10), education;school;id;1472 (0.03), education;concentration;id;344 (0.02), work;employer;name;1175 (-0.01), work;projects;name;113 (-0.01)
+  Circle_6: location;name;339 (-0.03), locale;3 (0.03), education;type;1 (0.02), last_name;1326 (-0.02), gender;1 (0.02)
+  Circle_7: education;type;1 (0.06), locale;3 (0.06), education;school;name;696 (0.04), education;school;id;715 (0.04), gender;1 (0.03)
+  Circle_8: last_name;1410 (0.04), name;1793 (0.03), education;concentration;id;354 (0.02), name;1699 (-0.02), id;1609 (-0.01)
+  Circle_9: work;projects;name;113 (0.08), education;classes;with;id;185 (0.06), education;school;id;1378 (0.04), locale;3 (0.03), education;type;1 (0.03)
+
+==============================
+Ego ID: 1839
+Micro-F1: 0.7848 | Micro-AUC: 0.9062
+
+[Link Inference Attack - Ego 1839]
+  Avg Similarity (Connected)   : 0.9238
+  Avg Similarity (Unconnected) : 0.5181
+  => Attack AUC: 0.9223
+
+[Explanation for Ego 1839]
+  Circle_0: locale;9 (0.36), gender;1 (0.23), education;type;1 (0.20), location;name;345 (0.20), location;id;346 (0.20)
+  Circle_1: locale;9 (0.27), gender;1 (0.18), education;type;1 (0.17), location;id;346 (0.11), location;name;345 (0.11)
+  Circle_2: gender;0 (0.30), education;type;1 (0.30), locale;1 (0.28), location;name;345 (0.24), location;id;346 (0.24)
+  Circle_3: locale;9 (0.21), gender;1 (0.19), education;type;1 (0.17), location;id;346 (0.11), location;name;345 (0.11)
+  Circle_4: locale;9 (0.16), education;type;0 (0.15), location;id;346 (0.14), location;name;345 (0.14), gender;0 (0.11)
+  Circle_5: last_name;1513 (0.09), name;1913 (0.03), gender;0 (0.02), locale;9 (0.02), work;employer;id;1299 (-0.02)
+  Circle_6: last_name;1477 (0.10), education;classes;with;id;186 (0.07), education;year;id;8 (0.04), education;year;name;7 (0.04), education;type;2 (0.04)
+  Circle_7: locale;9 (0.06), education;type;1 (0.06), gender;1 (0.03), education;year;id;22 (0.03), education;year;name;18 (0.03)
+
+==============================
+Ego ID: 1968
+Micro-F1: 0.7867 | Micro-AUC: 0.9588
+
+[Link Inference Attack - Ego 1968]
+  Avg Similarity (Connected)   : 0.9660
+  Avg Similarity (Unconnected) : 0.7069
+  => Attack AUC: 0.9366
+
+[Explanation for Ego 1968]
+  Circle_0: gender;0 (0.07), education;type;2 (0.05), education;type;1 (0.05), locale;9 (0.04), location;id;357 (0.04)
+  Circle_1: education;school;id;1789 (-0.05), education;school;name;1729 (-0.02), birthday;652 (-0.00), education;concentration;name;469 (0.00), education;concentration;name;473 (0.00)
+  Circle_2: education;type;0 (0.14), education;type;1 (0.13), locale;9 (0.13), gender;0 (0.12), location;name;356 (0.12)
+  Circle_3: work;position;name;628 (0.14), education;school;id;2001 (0.13), gender;0 (0.09), work;employer;id;1328 (0.08), work;employer;name;1308 (0.08)
+  Circle_4: work;employer;id;1400 (-0.09), work;employer;id;1388 (0.05), name;2011 (-0.02), last_name;1663 (0.02), work;position;name;689 (-0.01)
+  Circle_5: first_name;1359 (0.14), name;2218 (-0.14), education;school;name;1917 (-0.10), id;2169 (0.01), gender;0 (0.01)
+  Circle_6: name;2006 (-0.07), work;start_date;71 (0.06), birthday;1183 (-0.04), education;school;id;1977 (0.03), gender;0 (0.01)
+  Circle_7: birthday;1231 (0.10), education;classes;with;name;240 (0.08), first_name;1316 (-0.02), birthday;1312 (-0.01), education;type;1 (0.00)
+  Circle_8: education;with;id;291 (0.04), id;2201 (-0.02), gender;0 (0.01), last_name;1831 (-0.01), education;type;1 (0.00)
+  Circle_9: work;start_date;162 (0.13), id;1973 (-0.07), hometown;name;448 (-0.04), work;employer;name;815 (0.02), education;concentration;id;501 (-0.02)
+  Circle_10: work;employer;name;1333 (-0.05), last_name;1802 (-0.02), name;2246 (-0.00), work;employer;name;1485 (0.00), first_name;1379 (-0.00)
+  Circle_11: gender;0 (0.13), education;type;1 (0.09), locale;1 (0.08), work;employer;id;1328 (0.08), work;employer;name;1308 (0.08)
+  Circle_12: education;type;0 (0.11), education;type;1 (0.08), education;school;name;1656 (0.08), education;school;id;1748 (0.08), hometown;name;444 (0.08)
+  Circle_13: work;end_date;23 (0.08), education;type;0 (0.05), education;type;1 (0.04), locale;9 (0.02), location;name;356 (0.02)
+
+==============================
+Ego ID: 2255
+Micro-F1: 0.9180 | Micro-AUC: 0.9843
+
+[Link Inference Attack - Ego 2255]
+  Avg Similarity (Connected)   : 0.9705
+  Avg Similarity (Unconnected) : 0.5885
+  => Attack AUC: 0.8956
+
+[Explanation for Ego 2255]
+  Circle_0: education;type;0 (0.26), education;type;1 (0.25), gender;0 (0.24), locale;1 (0.22), location;id;386 (0.22)
+  Circle_1: education;school;id;2296 (0.22), education;type;1 (0.05), locale;1 (0.05), gender;0 (0.03), education;type;0 (0.03)
+  Circle_2: education;type;0 (0.52), education;type;1 (0.51), gender;0 (0.49), locale;1 (0.48), location;id;386 (0.39)
+
+==============================
+Ego ID: 2365
+Micro-F1: 0.8929 | Micro-AUC: 0.9885
+
+[Link Inference Attack - Ego 2365]
+  Avg Similarity (Connected)   : 0.9570
+  Avg Similarity (Unconnected) : 0.4483
+  => Attack AUC: 0.9426
+
+[Explanation for Ego 2365]
+  Circle_0: gender;1 (0.13), locale;1 (0.09), work;end_date;5 (0.04), education;school;name;661 (0.04), education;type;0 (0.04)
+  Circle_1: locale;1 (0.08), gender;0 (0.05), gender;1 (0.04), last_name;1985 (0.01), name;2435 (0.01)
+  Circle_2: locale;1 (0.18), gender;1 (0.18), education;type;0 (0.18), education;type;1 (0.16), education;school;id;2322 (0.15)
+  Circle_3: work;start_date;67 (0.19), gender;0 (0.04), locale;1 (0.04), education;type;1 (0.04), education;school;id;680 (0.03)
+  Circle_4: locale;1 (0.20), education;type;1 (0.14), gender;1 (0.12), education;type;0 (0.12), education;school;name;661 (0.09)
+  Circle_5: locale;1 (0.40), gender;0 (0.34), education;type;1 (0.25), education;type;0 (0.18), education;school;name;661 (0.15)
+  Circle_6: locale;1 (0.11), gender;1 (0.09), work;end_date;5 (0.08), education;type;1 (0.08), education;type;0 (0.08)
+  Circle_7: locale;1 (0.35), gender;0 (0.22), education;type;0 (0.21), education;type;1 (0.21), education;school;id;2320 (0.20)
+  Circle_8: locale;1 (0.09), gender;1 (0.08), work;end_date;5 (0.06), education;type;0 (0.05), work;start_date;2 (0.04)
+  Circle_9: education;school;id;2322 (0.16), education;school;name;2210 (0.16), education;type;1 (0.16), locale;1 (0.16), education;type;2 (0.15)
+
+==============================
+Ego ID: 2738
+Micro-F1: 0.8333 | Micro-AUC: 0.9868
+
+[Link Inference Attack - Ego 2738]
+  Avg Similarity (Connected)   : 0.9077
+  Avg Similarity (Unconnected) : 0.5832
+  => Attack AUC: 0.8348
+
+[Explanation for Ego 2738]
+  Circle_0: locale;1 (0.31), gender;0 (0.23), education;type;1 (0.23), education;type;2 (0.15), work;employer;name;1854 (0.15)
+  Circle_1: locale;1 (0.28), education;type;0 (0.21), education;type;1 (0.21), gender;1 (0.21), gender;0 (0.14)
+  Circle_2: locale;1 (0.36), gender;0 (0.21), work;start_date;2 (0.21), location;id;250 (0.20), location;name;250 (0.20)
+  Circle_3: gender;1 (0.28), education;type;0 (0.28), education;type;1 (0.21), locale;1 (0.21), locale;0 (0.15)
+
+==============================
+Ego ID: 2790
+Micro-F1: 0.5000 | Micro-AUC: 0.8649
+
+[Link Inference Attack - Ego 2790]
+  Avg Similarity (Connected)   : 0.8818
+  Avg Similarity (Unconnected) : 0.6563
+  => Attack AUC: 0.8359
+
+[Explanation for Ego 2790]
+  Circle_0: education;type;1 (0.08), locale;1 (0.07), location;id;50 (0.06), location;name;50 (0.06), education;type;0 (0.06)
+  Circle_1: education;type;1 (0.10), gender;0 (0.09), locale;24 (0.08), education;type;0 (0.07), education;school;name;2612 (0.06)
+  Circle_2: location;name;464 (0.11), locale;1 (0.10), location;id;466 (0.08), gender;0 (0.08), work;location;name;11 (0.08)
+  Circle_3: work;employer;id;1927 (0.03), location;name;464 (0.02), locale;1 (0.02), location;id;466 (0.02), gender;0 (0.02)
+  Circle_4: education;school;name;2612 (0.13), gender;0 (0.13), locale;1 (0.12), education;type;1 (0.12), education;type;0 (0.11)
+  Circle_5: education;type;1 (0.55), education;school;name;2612 (0.50), gender;0 (0.50), locale;1 (0.37), education;type;2 (0.36)
+  Circle_6: education;type;2 (0.16), education;type;1 (0.16), education;school;name;2613 (0.14), gender;0 (0.14), location;id;50 (0.12)
+  Circle_7: education;school;name;2613 (0.06), education;type;2 (0.05), education;school;id;2736 (0.05), education;type;0 (0.03), gender;0 (0.03)
+
+==============================
+Ego ID: 2895
+Micro-F1: 0.7907 | Micro-AUC: 0.8968
+
+[Link Inference Attack - Ego 2895]
+  Avg Similarity (Connected)   : 0.8943
+  Avg Similarity (Unconnected) : 0.2945
+  => Attack AUC: 0.9318
+
+[Explanation for Ego 2895]
+  Circle_0: location;name;287 (0.45), location;id;287 (0.45), education;type;1 (0.40), education;type;0 (0.33), gender;0 (0.32)
+  Circle_1: locale;9 (0.38), education;type;0 (0.35), education;type;1 (0.30), gender;0 (0.29), education;school;id;2858 (0.24)
+  Circle_2: education;type;1 (0.22), locale;9 (0.21), gender;0 (0.20), education;type;0 (0.16), location;id;287 (0.12)
+  Circle_3: locale;9 (0.14), gender;1 (0.12), location;name;287 (0.11), location;id;287 (0.10), languages;name;34 (0.06)
+  Circle_4: education;type;1 (0.17), gender;0 (0.16), location;name;287 (0.16), location;id;287 (0.16), locale;9 (0.16)
+
+==============================
+Ego ID: 3059
+Micro-F1: 0.8054 | Micro-AUC: 0.9694
+
+[Link Inference Attack - Ego 3059]
+  Avg Similarity (Connected)   : 0.9783
+  Avg Similarity (Unconnected) : 0.5845
+  => Attack AUC: 0.9456
+
+[Explanation for Ego 3059]
+  Circle_0: education;type;1 (0.10), gender;1 (0.10), education;type;0 (0.09), education;school;name;2912 (0.08), hometown;name;706 (0.08)
+  Circle_1: name;3087 (-0.08), work;employer;name;2122 (-0.05), gender;0 (0.04), work;employer;name;2039 (-0.03), locale;1 (0.03)
+  Circle_2: gender;0 (0.09), education;type;0 (0.09), locale;1 (0.08), education;type;1 (0.08), education;school;id;3068 (0.06)
+  Circle_3: locale;1 (0.11), gender;0 (0.11), education;type;1 (0.07), education;type;0 (0.06), work;start_date;2 (0.03)
+  Circle_4: work;employer;name;2082 (0.01), gender;0 (0.01), education;type;0 (0.00), education;year;id;0 (0.00), education;type;1 (0.00)
+  Circle_5: gender;0 (0.10), locale;1 (0.08), education;type;1 (0.05), education;type;0 (0.05), languages;name;2 (0.05)
+  Circle_6: gender;0 (0.08), locale;1 (0.08), education;type;0 (0.06), education;type;1 (0.06), work;description;353 (0.04)
+  Circle_7: hometown;name;706 (0.24), hometown;id;711 (0.24), education;type;1 (0.24), education;type;0 (0.23), gender;1 (0.20)
+  Circle_8: education;type;1 (0.17), hometown;name;706 (0.17), hometown;id;711 (0.17), education;type;0 (0.17), gender;1 (0.17)
+  Circle_9: id;3150 (-0.01), education;type;0 (0.01), education;type;1 (0.01), hometown;name;706 (0.00), hometown;id;711 (0.00)
+  Circle_10: last_name;2589 (-0.11), education;school;name;2981 (-0.05), education;classes;name;236 (-0.04), name;3205 (0.03), education;concentration;id;468 (0.03)
+  Circle_11: education;school;name;2930 (0.03), name;3146 (-0.02), id;3189 (-0.01), education;year;id;19 (0.00), name;3128 (0.00)
+  Circle_12: work;position;name;941 (-0.03), locale;27 (0.02), hometown;id;734 (-0.01), gender;0 (0.01), work;start_date;2 (0.01)
+  Circle_13: gender;0 (0.22), locale;1 (0.16), education;type;0 (0.16), education;school;name;2915 (0.14), location;id;521 (0.13)
+  Circle_14: gender;0 (0.05), locale;1 (0.03), locale;0 (0.03), education;school;id;3138 (0.03), hometown;name;448 (0.02)
+
+==============================
+Ego ID: 3735
+Micro-F1: 0.8927 | Micro-AUC: 0.9817
+
+[Link Inference Attack - Ego 3735]
+  Avg Similarity (Connected)   : 0.9885
+  Avg Similarity (Unconnected) : 0.7545
+  => Attack AUC: 0.9653
+
+[Explanation for Ego 3735]
+  Circle_0: work;employer;id;2711 (-0.12), work;employer;name;2959 (0.10), id;4115 (0.09), birthday;2203 (-0.08), last_name;3299 (-0.08)
+  Circle_1: location;id;558 (0.05), education;classes;with;id;403 (-0.04), id;3756 (0.04), education;school;name;3599 (-0.03), work;employer;name;2965 (-0.02)
+  Circle_2: last_name;3205 (0.04), work;employer;name;2798 (0.03), name;3758 (0.02), work;location;id;541 (-0.01), education;school;id;2728 (0.01)
+  Circle_3: work;employer;id;3153 (0.07), work;position;name;1272 (0.05), education;concentration;id;1080 (0.03), education;concentration;name;916 (-0.02), id;4352 (-0.02)
+  Circle_4: work;position;id;609 (-0.11), work;position;id;1463 (-0.08), work;description;490 (0.03), languages;name;24 (-0.02), work;position;name;1293 (0.02)
+  Circle_5: work;employer;name;2689 (0.10), work;position;name;1421 (0.03), education;school;name;3786 (-0.01), work;employer;name;3141 (0.00), work;employer;id;2783 (-0.00)
+  Circle_6: education;degree;name;217 (-0.03), work;position;name;1444 (-0.03), id;3865 (0.03), last_name;3016 (-0.03), work;position;name;1280 (-0.03)
+  Circle_7: education;type;0 (0.09), education;type;1 (0.08), gender;1 (0.07), gender;0 (0.06), education;type;2 (0.06)
+  Circle_8: work;projects;id;236 (0.07), education;school;name;2316 (0.04), education;type;0 (0.03), education;school;name;48 (0.03), education;school;id;4044 (-0.03)
+  Circle_9: work;employer;name;2655 (-0.03), name;4366 (0.02), last_name;3314 (-0.02), education;school;id;4297 (0.02), first_name;2209 (-0.01)
+  Circle_10: id;4300 (0.06), education;classes;with;name;355 (-0.05), last_name;3007 (-0.05), education;classes;with;id;448 (0.03), education;with;id;664 (-0.03)
+  Circle_11: work;position;id;1025 (0.06), education;degree;id;214 (0.03), education;school;id;3846 (0.02), first_name;2282 (-0.02), work;employer;id;3182 (-0.01)
+  Circle_12: work;position;name;1343 (0.05), work;position;name;1434 (-0.04), first_name;2432 (0.03), work;employer;name;2665 (0.03), last_name;3159 (-0.02)
+  Circle_13: birthday;2169 (-0.12), languages;name;35 (-0.05), work;employer;id;3002 (-0.05), location;id;716 (0.04), last_name;3302 (0.03)
+  Circle_14: location;name;228 (0.09), work;position;id;1469 (0.04), locale;1 (0.03), id;4231 (0.03), birthday;780 (-0.02)
+  Circle_15: work;position;name;1375 (0.13), last_name;3325 (0.13), id;4059 (0.07), education;school;name;3707 (0.03), languages;name;230 (-0.03)
+  Circle_16: education;school;name;3513 (-0.09), first_name;2268 (0.04), birthday;609 (0.04), first_name;2265 (0.03), first_name;2350 (0.02)
+  Circle_17: education;concentration;id;44 (-0.09), work;position;name;1348 (0.07), work;description;528 (0.03), work;description;552 (0.01), last_name;3016 (-0.01)
+  Circle_18: education;school;id;3658 (0.05), first_name;1700 (-0.04), education;concentration;name;1098 (0.03), education;school;id;3767 (-0.03), education;concentration;name;276 (-0.03)
+  Circle_19: education;school;name;3490 (-0.06), first_name;72 (-0.06), name;3739 (-0.04), education;concentration;name;1080 (0.03), location;id;743 (0.03)
+  Circle_20: languages;id;28 (0.08), middle_name;317 (0.02), education;school;id;3914 (0.01), id;3814 (-0.01), name;4262 (-0.01)
+
+==============================
+Ego ID: 4406
+Micro-F1: 0.7920 | Micro-AUC: 0.9648
+
+[Link Inference Attack - Ego 4406]
+  Avg Similarity (Connected)   : 0.9930
+  Avg Similarity (Unconnected) : 0.7660
+  => Attack AUC: 0.9767
+
+[Explanation for Ego 4406]
+  Circle_0: work;start_date;60 (0.05), last_name;3774 (-0.04), work;description;637 (0.02), work;employer;id;3418 (-0.02), education;school;id;2729 (-0.01)
+  Circle_1: id;4513 (0.09), work;employer;name;3205 (-0.03), work;employer;name;3347 (-0.02), last_name;3588 (0.01), name;4465 (-0.01)
+  Circle_2: languages;id;124 (0.04), locale;7 (0.01), id;4562 (-0.01), gender;0 (0.01), work;employer;name;3415 (-0.00)
+  Circle_3: gender;0 (0.18), locale;26 (0.17), gender;1 (0.11), education;type;1 (0.10), education;type;0 (0.08)
+  Circle_4: work;employer;id;3435 (0.06), education;school;name;4228 (0.05), locale;7 (0.04), education;concentration;id;851 (0.03), gender;0 (0.03)
+  Circle_5: education;school;name;4209 (-0.17), gender;0 (0.01), first_name;2605 (0.01), id;4819 (0.01), education;type;1 (0.00)
+  Circle_6: education;school;name;4275 (-0.07), languages;id;220 (-0.05), education;type;1 (0.01), education;school;name;840 (0.01), id;4762 (0.01)
+  Circle_7: education;school;name;4308 (0.05), name;4459 (-0.04), last_name;3535 (0.03), work;end_date;41 (-0.01), birthday;2375 (-0.01)
+  Circle_8: work;employer;id;3284 (0.07), education;school;id;4344 (0.05), birthday;2364 (-0.02), id;4488 (-0.02), name;4595 (0.01)
+  Circle_9: locale;26 (0.07), gender;0 (0.04), last_name;3732 (-0.01), gender;1 (0.01), education;type;0 (0.01)
+  Circle_10: education;school;id;4609 (-0.05), gender;0 (0.03), last_name;3739 (-0.02), locale;26 (0.01), hometown;id;1033 (0.01)
+  Circle_11: work;employer;id;3297 (-0.11), education;school;name;4211 (-0.04), birthday;2290 (-0.04), last_name;3794 (-0.03), education;school;id;4483 (-0.03)
+  Circle_12: last_name;3804 (-0.05), work;employer;id;3345 (0.01), first_name;1053 (0.01), last_name;3716 (-0.01), work;position;name;1474 (-0.01)
+  Circle_13: work;employer;id;3319 (-0.11), education;school;id;4417 (-0.02), work;employer;name;3422 (0.02), work;employer;name;3394 (0.01), first_name;2647 (0.01)
+  Circle_14: education;school;name;4302 (0.04), education;concentration;name;1189 (-0.02), work;employer;name;3238 (-0.01), education;year;id;28 (-0.00), name;4535 (0.00)
+  Circle_15: work;employer;id;3291 (-0.05), location;name;366 (-0.02), languages;id;101 (-0.02), languages;id;220 (0.01), languages;name;264 (0.00)
+  Circle_16: education;school;id;4596 (0.01), location;name;762 (0.00), languages;id;134 (-0.00), first_name;2670 (0.00), education;concentration;name;1178 (0.00)
+  Circle_17: education;classes;with;name;472 (0.06), work;employer;name;3403 (0.05), first_name;2614 (-0.04), work;projects;with;name;157 (-0.02), hometown;id;1036 (0.01)
+  Circle_18: education;school;id;4606 (0.03), location;name;756 (0.02), birthday;2413 (-0.01), work;position;id;409 (-0.01), id;4733 (0.00)
+  Circle_19: education;school;name;4235 (0.11), birthday;2466 (0.07), work;projects;description;100 (0.05), id;4624 (0.04), first_name;551 (-0.04)
+  Circle_20: last_name;3875 (0.03), id;4787 (0.03), location;name;763 (-0.03), name;4598 (-0.03), first_name;2581 (0.03)
+  Circle_21: work;end_date;41 (0.05), first_name;2627 (0.03), work;position;name;1465 (-0.02), education;school;name;4253 (-0.01), education;school;name;4178 (-0.01)
+  Circle_22: name;4717 (-0.51), education;school;name;4276 (-0.10), work;location;name;548 (0.05), id;4714 (-0.02), hometown;name;1062 (-0.01)
+  Circle_23: last_name;3816 (-0.14), work;projects;start_date;53 (-0.03), work;employer;id;3367 (-0.02), id;4550 (-0.01), location;id;104 (-0.01)
+  Circle_24: work;start_date;68 (-0.03), education;concentration;id;1280 (0.02), middle_name;326 (0.01), education;school;name;4347 (0.01), first_name;1359 (0.01)
+  Circle_25: name;4786 (0.05), name;4757 (-0.04), first_name;2590 (-0.03), first_name;2661 (0.03), birthday;2426 (-0.02)
+  Circle_26: id;4821 (-0.06), education;school;name;4343 (-0.05), education;concentration;name;1210 (-0.04), birthday;2306 (-0.02), hometown;name;1060 (-0.01)
+  Circle_27: gender;0 (0.14), gender;1 (0.10), education;type;1 (0.09), education;type;0 (0.08), locale;26 (0.05)
+
+==============================
+Ego ID: 4829
+Micro-F1: 0.8281 | Micro-AUC: 0.9677
+
+[Link Inference Attack - Ego 4829]
+  Avg Similarity (Connected)   : 0.9646
+  Avg Similarity (Unconnected) : 0.6552
+  => Attack AUC: 0.9404
+
+[Explanation for Ego 4829]
+  Circle_0: education;type;1 (0.05), education;type;0 (0.05), locale;1 (0.05), id;4957 (-0.04), languages;id;355 (-0.04)
+  Circle_1: education;type;0 (0.30), education;type;1 (0.28), gender;0 (0.27), locale;1 (0.25), location;name;816 (0.24)
+  Circle_2: education;school;id;4706 (0.03), education;school;name;4461 (0.02), education;school;name;4514 (-0.01), education;classes;with;name;538 (-0.01), education;classes;from;name;154 (-0.00)
+  Circle_3: gender;0 (0.18), education;type;1 (0.17), education;type;0 (0.17), locale;1 (0.15), location;name;816 (0.15)
+  Circle_4: gender;0 (0.06), birthday;395 (0.06), education;type;1 (0.06), education;type;0 (0.05), locale;1 (0.05)
+  Circle_5: education;classes;from;name;156 (0.04), education;school;name;4695 (0.04), education;type;1 (0.04), locale;1 (0.04), education;type;0 (0.03)
+  Circle_6: last_name;2032 (0.02), education;type;0 (0.00), hometown;id;1135 (-0.00), education;year;id;38 (-0.00), education;classes;with;id;600 (-0.00)
+  Circle_7: education;type;1 (0.07), education;type;0 (0.07), location;name;816 (0.07), location;id;823 (0.07), locale;1 (0.06)
+  Circle_8: education;with;name;925 (-0.04), education;school;name;4750 (0.03), gender;0 (0.03), education;type;0 (0.02), education;type;1 (0.02)
+  Circle_9: education;with;name;886 (-0.05), education;classes;name;467 (-0.03), education;school;id;4855 (0.02), education;with;id;801 (-0.01), education;school;name;4766 (-0.01)
+  Circle_10: education;concentration;name;256 (0.10), education;classes;name;515 (0.09), hometown;name;1121 (0.08), name;4831 (-0.04), education;school;name;4407 (0.03)
+
+==============================
+Ego ID: 5212
+Micro-F1: 0.7911 | Micro-AUC: 0.9549
+
+[Link Inference Attack - Ego 5212]
+  Avg Similarity (Connected)   : 0.9696
+  Avg Similarity (Unconnected) : 0.7273
+  => Attack AUC: 0.9288
+
+[Explanation for Ego 5212]
+  Circle_0: education;classes;with;id;4179 (-0.02), id;27387 (-0.01), last_name;4678 (-0.01), birthday;4352 (-0.00), id;27380 (-0.00)
+  Circle_1: gender;0 (0.04), education;type;1 (0.02), hometown;id;1179 (-0.02), locale;1 (0.02), education;type;0 (0.01)
+  Circle_2: hometown;name;4299 (-0.03), work;employer;id;3717 (0.01), last_name;17075 (0.01), education;year;name;15 (0.01), gender;0 (0.01)
+  Circle_3: work;position;id;1631 (0.10), work;end_date;82 (-0.06), work;employer;name;18267 (-0.02), locale;8 (0.01), gender;1 (0.01)
+  Circle_4: work;start_date;16 (-0.05), education;school;id;22311 (-0.05), id;27344 (-0.04), education;classes;with;name;730 (0.02), work;position;name;895 (0.01)
+  Circle_5: work;projects;id;308 (0.11), locale;0 (0.01), last_name;17126 (-0.01), gender;0 (0.00), gender;1 (0.00)
+  Circle_6: gender;0 (0.23), education;type;1 (0.14), locale;1 (0.12), education;type;0 (0.11), locale;8 (0.09)
+  Circle_7: id;27495 (0.01), education;with;name;4796 (-0.00), education;classes;with;name;4153 (-0.00), education;concentration;name;5446 (0.00), gender;1 (0.00)
+  Circle_8: last_name;17147 (-0.16), first_name;2930 (-0.05), education;school;id;5360 (-0.03), last_name;4512 (0.02), work;start_date;21 (-0.01)
+  Circle_9: locale;0 (0.11), name;27100 (0.05), education;concentration;id;5678 (-0.01), education;year;name;28 (-0.01), work;position;name;399 (0.01)
+  Circle_10: locale;1 (0.03), gender;0 (0.01), gender;1 (0.01), id;27303 (0.00), id;27462 (-0.00)
+  Circle_11: gender;0 (0.16), education;type;1 (0.09), education;type;0 (0.09), locale;8 (0.07), locale;1 (0.06)
+  Circle_12: gender;0 (0.07), locale;8 (0.06), education;type;0 (0.05), education;type;1 (0.05), gender;1 (0.05)
+  Circle_13: gender;0 (0.14), locale;8 (0.12), education;type;1 (0.09), gender;1 (0.09), education;type;0 (0.09)
+  Circle_14: gender;1 (0.02), gender;0 (0.02), locale;1 (0.01), education;type;0 (0.01), education;type;1 (0.01)
+  Circle_15: education;classes;with;id;4177 (0.12), last_name;17098 (-0.07), languages;name;19 (-0.06), id;5225 (-0.03), hometown;name;2465 (-0.03)
+  Circle_16: last_name;17060 (-0.01), education;concentration;id;5678 (-0.01), work;position;id;1695 (0.01), birthday;209 (0.00), education;year;name;18 (-0.00)
+  Circle_17: work;projects;id;323 (0.03), locale;8 (0.01), education;classes;with;name;730 (0.01), name;27080 (-0.01), gender;0 (0.00)
+  Circle_18: first_name;1808 (0.08), name;27029 (0.04), work;employer;name;18266 (0.04), location;name;907 (-0.03), gender;0 (0.03)
+
+==============================
+Ego ID: 5494
+Micro-F1: 0.8133 | Micro-AUC: 0.9339
+
+[Link Inference Attack - Ego 5494]
+  Avg Similarity (Connected)   : 0.9426
+  Avg Similarity (Unconnected) : 0.7105
+  => Attack AUC: 0.8985
+
+[Explanation for Ego 5494]
+  Circle_0: locale;8 (0.14), gender;1 (0.12), education;type;0 (0.08), education;school;id;5365 (0.06), education;school;name;5105 (0.06)
+  Circle_1: locale;8 (0.05), gender;1 (0.04), gender;0 (0.03), education;school;name;5125 (0.03), last_name;4578 (0.03)
+  Circle_2: last_name;4520 (0.11), languages;name;192 (0.07), work;with;id;274 (-0.03), languages;name;77 (0.02), education;school;id;5416 (0.02)
+  Circle_3: id;5632 (0.03), gender;1 (0.03), locale;8 (0.02), name;5589 (-0.01), locale;0 (0.00)
+  Circle_4: work;projects;description;110 (-0.01), id;5662 (0.01), education;school;name;5111 (-0.00), birthday;2769 (0.00), education;with;id;1016 (-0.00)
+  Circle_5: locale;8 (0.21), education;type;0 (0.13), education;type;1 (0.12), gender;1 (0.12), gender;0 (0.09)
+  Circle_6: gender;0 (0.13), locale;1 (0.08), education;type;0 (0.07), education;type;1 (0.07), gender;1 (0.06)
+  Circle_7: gender;0 (0.03), education;type;0 (0.02), gender;1 (0.02), locale;8 (0.02), education;school;id;5155 (0.02)
+  Circle_8: last_name;4499 (0.10), gender;1 (0.06), locale;8 (0.05), education;type;1 (0.04), education;type;0 (0.03)
+  Circle_9: locale;8 (0.26), education;type;0 (0.21), gender;1 (0.21), education;type;1 (0.17), gender;0 (0.13)
+  Circle_10: work;position;id;1703 (-0.06), id;5721 (-0.03), education;school;id;5475 (-0.01), locale;8 (0.01), education;school;name;5130 (0.01)
+
+==============================
+Ego ID: 5881
+Micro-F1: 0.4000 | Micro-AUC: 0.9572
+
+[Link Inference Attack - Ego 5881]
+  Avg Similarity (Connected)   : 0.9923
+  Avg Similarity (Unconnected) : 0.8041
+  => Attack AUC: 0.9180
+
+[Explanation for Ego 5881]
+  Circle_0: last_name;3976 (-0.26), education;classes;with;id;924 (-0.10), id;5971 (0.05), education;with;name;1291 (-0.05), education;with;id;1175 (0.05)
+  Circle_1: last_name;3935 (0.05), education;with;name;1144 (-0.04), education;with;id;1192 (-0.02), education;classes;from;id;328 (0.02), birthday;3066 (0.02)
+  Circle_2: education;classes;with;name;879 (-0.09), id;6292 (-0.07), work;employer;id;3992 (-0.05), education;school;id;5975 (-0.04), name;6374 (-0.03)
+  Circle_3: name;6210 (-0.17), education;type;0 (0.05), locale;1 (0.05), education;school;id;5968 (-0.05), education;type;1 (0.04)
+  Circle_4: birthday;339 (-0.05), birthday;3049 (0.03), education;school;name;5652 (-0.03), education;with;id;1330 (0.03), name;5940 (0.02)
+  Circle_5: birthday;2887 (0.05), education;school;name;5481 (0.05), education;classes;with;name;1144 (-0.04), education;classes;with;id;836 (0.04), education;classes;with;name;809 (-0.03)
+
+==============================
+Ego ID: 6413
+Micro-F1: 0.5333 | Micro-AUC: 0.9309
+
+[Link Inference Attack - Ego 6413]
+  Avg Similarity (Connected)   : 0.7964
+  Avg Similarity (Unconnected) : 0.5849
+  => Attack AUC: 0.7109
+
+[Explanation for Ego 6413]
+  Circle_0: locale;1 (0.13), gender;0 (0.10), education;type;1 (0.08), education;type;0 (0.07), education;school;name;661 (0.07)
+  Circle_1: locale;1 (0.09), gender;0 (0.09), education;type;0 (0.06), education;school;name;5939 (0.06), education;type;1 (0.06)
+  Circle_2: locale;1 (0.06), last_name;2805 (-0.05), gender;1 (0.03), education;type;1 (0.03), education;type;0 (0.02)
+
+==============================
+Ego ID: 6726
+Micro-F1: 0.8462 | Micro-AUC: 0.9484
+
+[Link Inference Attack - Ego 6726]
+  Avg Similarity (Connected)   : 0.9761
+  Avg Similarity (Unconnected) : 0.6005
+  => Attack AUC: 0.9157
+
+[Explanation for Ego 6726]
+  Circle_0: locale;1 (0.22), gender;0 (0.13), gender;1 (0.09), education;type;1 (0.07), education;type;0 (0.07)
+  Circle_1: education;degree;name;327 (-0.03), locale;1 (0.02), education;type;0 (0.02), education;type;1 (0.01), education;school;id;6491 (0.01)
+  Circle_2: locale;1 (0.10), gender;0 (0.08), education;type;1 (0.07), id;6729 (-0.06), education;type;0 (0.05)
+  Circle_3: locale;1 (0.40), education;type;1 (0.25), education;type;0 (0.22), gender;0 (0.20), gender;1 (0.19)
+
+==============================
+Ego ID: 7667
+Micro-F1: 0.8381 | Micro-AUC: 0.9811
+
+[Link Inference Attack - Ego 7667]
+  Avg Similarity (Connected)   : 0.9478
+  Avg Similarity (Unconnected) : 0.6889
+  => Attack AUC: 0.8539
+
+[Explanation for Ego 7667]
+  Circle_0: first_name;515 (0.07), education;concentration;id;1781 (-0.02), education;school;id;7006 (0.02), education;classes;with;id;1261 (-0.02), education;school;id;592 (-0.01)
+  Circle_1: last_name;5833 (-0.11), gender;0 (0.03), education;classes;with;name;1208 (0.03), name;7859 (0.02), locale;0 (0.02)
+  Circle_2: gender;0 (0.18), education;type;1 (0.18), locale;0 (0.16), education;school;name;6619 (0.12), education;school;id;6973 (0.12)
+  Circle_3: education;type;1 (0.09), gender;0 (0.07), locale;0 (0.07), education;type;0 (0.06), gender;1 (0.03)
+  Circle_4: education;concentration;name;1770 (0.07), education;concentration;name;1751 (0.03), education;concentration;name;1692 (0.03), birthday;3408 (-0.03), first_name;1247 (0.02)
+
+==============================
+Ego ID: 8100
+Micro-F1: 0.7761 | Micro-AUC: 0.9884
+
+[Link Inference Attack - Ego 8100]
+  Avg Similarity (Connected)   : 0.9602
+  Avg Similarity (Unconnected) : 0.5790
+  => Attack AUC: 0.9468
+
+[Explanation for Ego 8100]
+  Circle_0: locale;1 (0.06), education;type;0 (0.06), education;type;1 (0.03), gender;1 (0.03), work;description;1164 (-0.02)
+  Circle_1: locale;1 (0.03), education;type;0 (0.03), last_name;6081 (-0.02), gender;1 (0.02), middle_name;548 (-0.01)
+  Circle_2: work;projects;id;420 (0.15), locale;1 (0.05), gender;0 (0.04), work;description;1153 (0.02), education;type;0 (0.01)
+  Circle_3: locale;1 (0.32), education;type;0 (0.25), education;school;id;7284 (0.21), education;school;name;6927 (0.21), hometown;id;1715 (0.19)
+  Circle_4: locale;1 (0.22), education;type;1 (0.11), gender;0 (0.10), education;type;0 (0.10), education;type;2 (0.10)
+  Circle_5: locale;1 (0.29), education;type;0 (0.21), education;type;1 (0.17), gender;1 (0.15), gender;0 (0.15)
+  Circle_6: locale;1 (0.04), work;location;name;894 (0.02), gender;0 (0.02), education;type;1 (0.01), education;type;0 (0.01)
+  Circle_7: locale;1 (0.13), education;type;0 (0.10), education;school;name;6927 (0.08), education;school;id;7284 (0.08), hometown;id;1715 (0.08)
+  Circle_8: locale;1 (0.14), education;type;0 (0.13), gender;1 (0.08), education;type;1 (0.06), gender;0 (0.05)
+
+==============================
+Ego ID: 8239
+Micro-F1: 0.9375 | Micro-AUC: 0.9794
+
+[Link Inference Attack - Ego 8239]
+  Avg Similarity (Connected)   : 0.9891
+  Avg Similarity (Unconnected) : 0.5304
+  => Attack AUC: 0.9211
+
+[Explanation for Ego 8239]
+  Circle_0: locale;1 (0.28), education;school;id;7384 (0.18), education;school;name;7022 (0.18), education;type;0 (0.17), gender;0 (0.16)
+  Circle_1: locale;1 (0.12), gender;0 (0.12), education;type;0 (0.04), education;type;1 (0.04), work;end_date;5 (0.04)
+  Circle_2: locale;1 (0.53), gender;0 (0.35), education;type;0 (0.29), education;type;1 (0.25), gender;1 (0.16)
+  Circle_3: locale;1 (0.12), gender;1 (0.07), education;type;0 (0.07), education;type;1 (0.07), gender;0 (0.04)
+  Circle_4: locale;1 (0.15), education;type;0 (0.13), education;school;name;7022 (0.10), education;school;id;7384 (0.10), education;type;1 (0.08)
+
+==============================
+Ego ID: 8553
+Micro-F1: 0.8500 | Micro-AUC: 0.9562
+
+[Link Inference Attack - Ego 8553]
+  Avg Similarity (Connected)   : 0.9942
+  Avg Similarity (Unconnected) : 0.7072
+  => Attack AUC: 0.9800
+
+[Explanation for Ego 8553]
+  Circle_0: locale;1 (0.03), id;8556 (0.02), work;projects;start_date;19 (0.02), education;type;0 (0.01), middle_name;593 (0.01)
+  Circle_1: work;employer;id;5803 (-0.05), gender;1 (0.03), locale;1 (0.02), education;type;0 (0.01), location;id;1331 (0.01)
+  Circle_2: id;8773 (-0.18), work;location;id;182 (0.16), work;location;id;954 (-0.06), education;concentration;name;276 (0.04), education;school;id;7697 (0.04)
+  Circle_3: locale;1 (0.08), gender;0 (0.08), education;type;0 (0.06), education;type;1 (0.05), last_name;5229 (0.03)
+  Circle_4: locale;1 (0.05), work;position;name;2631 (0.04), gender;1 (0.04), education;school;name;7288 (-0.03), education;type;0 (0.02)
+  Circle_5: education;school;name;7345 (-0.07), locale;1 (0.04), first_name;25 (-0.04), gender;0 (0.04), education;with;id;1698 (0.04)
+  Circle_6: education;degree;name;413 (-0.07), work;location;id;988 (-0.03), last_name;6494 (-0.02), name;8722 (-0.02), id;8647 (-0.01)
+  Circle_7: work;location;name;935 (0.07), education;school;name;991 (0.04), locale;1 (0.04), gender;1 (0.03), education;type;0 (0.03)
+  Circle_8: locale;1 (0.26), gender;0 (0.24), education;type;0 (0.19), education;type;1 (0.18), education;school;name;6584 (0.12)
+  Circle_9: locale;1 (0.13), education;type;0 (0.09), gender;0 (0.08), education;type;1 (0.06), education;year;name;13 (0.06)
+
+==============================
+Ego ID: 8777
+Micro-F1: 0.8652 | Micro-AUC: 0.9342
+
+[Link Inference Attack - Ego 8777]
+  Avg Similarity (Connected)   : 0.9472
+  Avg Similarity (Unconnected) : 0.6883
+  => Attack AUC: 0.8973
+
+[Explanation for Ego 8777]
+  Circle_0: locale;7 (0.08), gender;0 (0.04), hometown;name;1169 (0.02), education;classes;name;561 (0.02), education;school;id;7893 (0.02)
+  Circle_1: education;type;1 (0.09), locale;7 (0.08), education;type;0 (0.07), work;start_date;2 (0.04), gender;1 (0.03)
+  Circle_2: gender;1 (0.14), education;type;1 (0.12), education;school;name;7449 (0.11), education;type;0 (0.10), education;school;id;7840 (0.08)
+  Circle_3: hometown;name;1867 (0.11), hometown;id;1876 (0.11), locale;7 (0.10), education;type;1 (0.07), education;type;0 (0.07)
+  Circle_4: locale;7 (0.33), gender;0 (0.19), education;type;1 (0.15), gender;1 (0.14), hometown;id;1876 (0.12)
+  Circle_5: education;school;name;7449 (0.06), locale;7 (0.05), education;type;1 (0.04), gender;1 (0.04), education;type;0 (0.04)
+  Circle_6: locale;7 (0.45), gender;1 (0.27), hometown;id;1876 (0.24), hometown;name;1867 (0.24), location;id;1335 (0.23)
+  Circle_7: locale;7 (0.11), education;type;1 (0.07), gender;0 (0.06), gender;1 (0.05), work;start_date;2 (0.04)
+  Circle_8: locale;7 (0.12), location;id;1335 (0.12), location;name;1328 (0.12), gender;1 (0.09), work;end_date;5 (0.05)
+  Circle_9: work;location;id;1003 (0.11), education;type;1 (0.07), education;school;name;7449 (0.06), gender;1 (0.05), locale;7 (0.04)
+  Circle_10: education;type;0 (0.16), location;id;1335 (0.14), location;name;1328 (0.14), education;type;1 (0.11), hometown;name;1867 (0.11)
+
+==============================
+Ego ID: 9103
+Micro-F1: 0.7727 | Micro-AUC: 0.9704
+
+[Link Inference Attack - Ego 9103]
+  Avg Similarity (Connected)   : 0.9678
+  Avg Similarity (Unconnected) : 0.5652
+  => Attack AUC: 0.9494
+
+[Explanation for Ego 9103]
+  Circle_0: gender;0 (0.06), locale;6 (0.05), education;type;1 (0.05), locale;1 (0.02), education;type;0 (0.01)
+  Circle_1: locale;6 (0.09), gender;0 (0.08), gender;1 (0.07), locale;1 (0.03), education;type;1 (0.03)
+  Circle_2: locale;6 (0.14), gender;1 (0.09), gender;0 (0.08), name;9140 (-0.07), education;type;1 (0.06)
+  Circle_3: gender;1 (0.10), languages;name;70 (0.07), location;name;266 (0.05), location;id;266 (0.05), education;year;id;4 (0.04)
+  Circle_4: gender;1 (0.20), locale;6 (0.19), gender;0 (0.05), locale;0 (0.04), languages;id;106 (0.04)
+  Circle_5: locale;6 (0.25), education;type;1 (0.19), gender;0 (0.16), education;type;0 (0.13), education;school;id;8091 (0.07)
+  Circle_6: gender;0 (0.57), locale;6 (0.48), education;type;1 (0.34), education;type;0 (0.30), education;school;name;7680 (0.21)
+  Circle_7: gender;1 (0.10), locale;6 (0.07), education;type;1 (0.05), education;type;0 (0.04), work;employer;name;6092 (0.03)
+
+==============================
+Ego ID: 9642
+Micro-F1: 0.8263 | Micro-AUC: 0.9745
+
+[Link Inference Attack - Ego 9642]
+  Avg Similarity (Connected)   : 0.9830
+  Avg Similarity (Unconnected) : 0.6898
+  => Attack AUC: 0.9803
+
+[Explanation for Ego 9642]
+  Circle_0: education;school;name;7378 (0.13), locale;1 (0.08), gender;0 (0.04), education;type;0 (0.03), education;type;1 (0.03)
+  Circle_1: work;employer;id;6831 (-0.02), locale;1 (0.01), education;concentration;id;2378 (0.01), education;type;0 (0.01), location;id;1016 (0.01)
+  Circle_2: work;employer;id;6743 (-0.04), locale;1 (0.03), gender;1 (0.02), education;type;0 (0.02), work;employer;name;6696 (-0.02)
+  Circle_3: first_name;4421 (-0.08), locale;1 (0.03), gender;0 (0.02), birthday;3967 (0.02), education;type;1 (0.02)
+  Circle_4: locale;1 (0.02), gender;0 (0.01), work;location;id;1151 (0.01), location;name;488 (0.01), location;id;493 (0.01)
+  Circle_5: locale;1 (0.21), education;type;0 (0.15), education;type;1 (0.13), gender;0 (0.13), location;id;493 (0.09)
+  Circle_6: locale;1 (0.10), education;type;0 (0.06), gender;0 (0.06), education;type;1 (0.05), gender;1 (0.03)
+  Circle_7: work;employer;name;6673 (-0.09), work;position;id;3214 (-0.02), locale;1 (0.01), name;9661 (-0.01), hometown;name;2123 (0.01)
+  Circle_8: last_name;7188 (0.06), locale;1 (0.05), location;name;488 (0.05), location;id;493 (0.05), education;type;0 (0.04)
+  Circle_9: education;concentration;name;1602 (-0.07), education;school;name;8200 (-0.06), hometown;id;2111 (-0.06), work;location;name;1115 (0.03), education;school;id;6884 (-0.03)
+  Circle_10: locale;1 (0.18), education;type;0 (0.14), education;type;1 (0.13), gender;1 (0.10), gender;0 (0.07)
+  Circle_11: hometown;id;2099 (-0.04), work;projects;start_date;46 (-0.04), locale;1 (0.04), middle_name;708 (-0.03), education;school;name;8071 (0.03)
+  Circle_12: first_name;1281 (-0.06), work;position;name;399 (-0.05), locale;1 (0.05), education;concentration;id;2333 (-0.04), education;type;0 (0.03)
+  Circle_13: middle_name;637 (0.05), locale;1 (0.05), education;type;1 (0.02), education;year;id;39 (-0.02), education;type;0 (0.02)
+  Circle_14: work;employer;name;6621 (0.09), education;school;name;8149 (-0.09), work;position;id;3262 (0.03), gender;0 (0.03), locale;1 (0.03)
+  Circle_15: locale;1 (0.15), gender;0 (0.11), education;type;0 (0.10), education;type;1 (0.10), education;type;2 (0.06)
+  Circle_16: locale;1 (0.17), education;type;0 (0.13), education;type;1 (0.11), gender;1 (0.09), gender;0 (0.08)
+  Circle_17: locale;1 (0.07), education;degree;id;490 (0.07), education;type;0 (0.05), work;projects;with;id;268 (-0.05), education;type;1 (0.04)
+  Circle_18: languages;name;386 (-0.11), hometown;name;2089 (-0.01), first_name;4407 (-0.01), education;school;id;8656 (-0.01), locale;1 (0.01)
+  Circle_19: work;end_date;1 (-0.05), work;position;id;3268 (-0.04), work;employer;id;6872 (0.03), locale;1 (0.02), birthday;1040 (-0.02)
+  Circle_20: locale;1 (0.10), education;type;0 (0.07), gender;1 (0.06), education;type;1 (0.05), languages;name;2 (0.02)
+
+==============================
+Ego ID: 9846
+Micro-F1: 0.7436 | Micro-AUC: 0.9385
+
+[Link Inference Attack - Ego 9846]
+  Avg Similarity (Connected)   : 0.9385
+  Avg Similarity (Unconnected) : 0.5727
+  => Attack AUC: 0.8789
+
+[Explanation for Ego 9846]
+  Circle_0: work;employer;name;6741 (0.03), locale;1 (0.02), work;location;name;1155 (0.02), work;employer;id;6934 (0.01), education;type;0 (0.01)
+  Circle_1: locale;1 (0.16), gender;1 (0.13), education;type;1 (0.06), work;start_date;2 (0.03), education;type;0 (0.03)
+  Circle_2: gender;1 (0.08), locale;1 (0.08), education;school;name;8288 (0.06), education;type;0 (0.06), hometown;name;2143 (0.06)
+  Circle_3: education;school;name;8062 (0.05), hometown;name;797 (0.05), education;school;id;8688 (0.04), education;type;2 (0.04), education;type;1 (0.04)
+  Circle_4: locale;1 (0.26), gender;0 (0.23), education;type;2 (0.16), education;type;1 (0.12), education;school;name;8062 (0.12)
+  Circle_5: locale;1 (0.45), gender;0 (0.39), education;type;2 (0.26), education;type;1 (0.23), education;type;0 (0.23)
+  Circle_6: locale;1 (0.16), education;type;1 (0.13), gender;0 (0.11), education;type;0 (0.11), last_name;7241 (0.10)
+  Circle_7: work;start_date;431 (0.02), locale;1 (0.01), education;type;1 (0.01), education;type;0 (0.01), education;school;id;8688 (0.01)
+  Circle_8: locale;1 (0.20), education;type;1 (0.14), education;type;0 (0.11), gender;0 (0.10), education;type;2 (0.10)
+
+==============================
+Ego ID: 9947
+Micro-F1: 0.8670 | Micro-AUC: 0.9772
+
+[Link Inference Attack - Ego 9947]
+  Avg Similarity (Connected)   : 0.9772
+  Avg Similarity (Unconnected) : 0.7403
+  => Attack AUC: 0.9293
+
+[Explanation for Ego 9947]
+  Circle_0: work;position;id;3459 (0.06), location;id;1493 (0.06), education;degree;id;528 (-0.02), education;school;name;8516 (0.01), education;year;id;9 (-0.01)
+  Circle_1: locale;1 (0.18), education;type;0 (0.13), education;type;1 (0.12), education;school;id;8777 (0.10), education;school;name;8325 (0.10)
+  Circle_2: name;10285 (0.06), education;school;name;7050 (-0.04), work;location;id;63 (0.03), locale;1 (0.02), name;10307 (-0.02)
+  Circle_3: work;position;name;3310 (-0.03), id;10208 (0.02), first_name;51 (-0.01), work;employer;name;6908 (0.01), work;end_date;6 (0.01)
+  Circle_4: education;concentration;name;151 (-0.04), location;name;1101 (0.04), id;10306 (-0.03), work;employer;name;6943 (0.03), last_name;2224 (0.03)
+  Circle_5: work;employer;id;7102 (-0.04), first_name;4464 (-0.03), name;10149 (-0.03), work;employer;name;7154 (0.02), id;10015 (-0.00)
+  Circle_6: education;classes;id;835 (-0.10), education;concentration;name;105 (-0.06), education;school;name;8396 (0.05), work;position;name;3269 (0.05), locale;1 (0.04)
+  Circle_7: work;employer;id;7356 (0.09), location;name;48 (-0.01), education;degree;id;115 (0.01), education;concentration;id;2442 (-0.01), work;employer;name;6803 (-0.01)
+  Circle_8: locale;1 (0.15), gender;1 (0.10), education;type;1 (0.09), education;type;0 (0.09), education;school;name;2253 (0.08)
+  Circle_9: work;location;name;1169 (0.04), work;employer;id;7236 (-0.04), education;school;name;8372 (0.03), work;employer;id;7001 (0.02), id;10025 (0.01)
+  Circle_10: hometown;id;2241 (0.14), locale;1 (0.07), gender;0 (0.03), education;type;0 (0.03), education;type;1 (0.03)
+  Circle_11: last_name;7412 (0.07), birthday;494 (0.05), work;position;name;3236 (0.05), education;concentration;id;2515 (-0.04), work;start_date;27 (0.03)
+  Circle_12: id;10122 (-0.02), hometown;name;2189 (0.02), locale;1 (0.01), education;school;name;6394 (0.01), last_name;120 (0.01)
+
+==============================
+Ego ID: 10395
+Micro-F1: 0.8757 | Micro-AUC: 0.9693
+
+[Link Inference Attack - Ego 10395]
+  Avg Similarity (Connected)   : 0.9881
+  Avg Similarity (Unconnected) : 0.6844
+  => Attack AUC: 0.9412
+
+[Explanation for Ego 10395]
+  Circle_0: hometown;name;2289 (0.11), education;type;0 (0.06), education;type;1 (0.06), locale;1 (0.06), work;employer;name;290 (0.05)
+  Circle_1: education;classes;id;923 (0.16), education;year;name;20 (-0.04), education;school;id;9605 (0.02), location;name;56 (-0.01), education;classes;with;id;1615 (0.01)
+  Circle_2: education;with;name;1798 (-0.13), last_name;4773 (-0.03), work;position;name;3435 (-0.03), education;classes;with;id;1618 (0.02), id;10431 (0.02)
+  Circle_3: education;type;0 (0.13), locale;1 (0.12), education;type;1 (0.12), gender;0 (0.10), hometown;id;1314 (0.08)
+  Circle_4: locale;1 (0.16), gender;0 (0.16), education;type;1 (0.15), education;type;0 (0.15), education;school;name;5561 (0.14)
+  Circle_5: id;10486 (-0.09), education;classes;id;926 (-0.05), last_name;5635 (0.01), education;classes;with;id;1509 (0.01), work;projects;name;527 (0.00)
+  Circle_6: birthday;1970 (-0.08), birthday;4196 (0.03), education;classes;from;id;444 (0.03), education;school;id;9035 (0.01), first_name;3390 (-0.01)
+
+==============================
+Ego ID: 10929
+Micro-F1: 0.9032 | Micro-AUC: 0.9935
+
+[Link Inference Attack - Ego 10929]
+  Avg Similarity (Connected)   : 0.9384
+  Avg Similarity (Unconnected) : 0.4741
+  => Attack AUC: 0.9553
+
+[Explanation for Ego 10929]
+  Circle_0: locale;22 (0.16), education;type;0 (0.13), location;id;1593 (0.13), location;name;1586 (0.13), work;start_date;2 (0.13)
+  Circle_1: education;type;1 (0.13), gender;1 (0.13), location;id;1593 (0.13), location;name;1586 (0.13), locale;22 (0.13)
+  Circle_2: locale;22 (0.22), gender;0 (0.19), education;type;0 (0.17), location;id;1593 (0.14), location;name;1586 (0.14)
+  Circle_3: locale;22 (0.24), education;type;1 (0.24), education;type;0 (0.22), gender;0 (0.20), education;school;name;9321 (0.19)
+  Circle_4: gender;0 (0.19), education;type;1 (0.18), locale;22 (0.18), education;type;2 (0.17), location;name;1586 (0.15)
+  Circle_5: education;type;1 (0.38), education;type;0 (0.35), education;school;name;9318 (0.29), location;name;1586 (0.27), location;id;1593 (0.27)
+
+==============================
+Ego ID: 11014
+Micro-F1: 0.8130 | Micro-AUC: 0.9789
+
+[Link Inference Attack - Ego 11014]
+  Avg Similarity (Connected)   : 0.9919
+  Avg Similarity (Unconnected) : 0.7502
+  => Attack AUC: 0.9729
+
+[Explanation for Ego 11014]
+  Circle_0: locale;1 (0.04), work;employer;name;7784 (-0.04), languages;id;518 (-0.03), education;school;name;9551 (-0.03), gender;0 (0.02)
+  Circle_1: locale;1 (0.11), work;position;id;1250 (0.10), last_name;8035 (0.07), education;type;1 (0.06), education;type;0 (0.05)
+  Circle_2: locale;1 (0.08), gender;0 (0.06), education;type;1 (0.05), education;type;0 (0.04), birthday;2109 (-0.02)
+  Circle_3: work;employer;name;7633 (0.05), id;11034 (-0.03), locale;1 (0.02), education;school;name;1080 (-0.02), gender;0 (0.01)
+  Circle_4: education;concentration;name;2575 (0.05), education;concentration;id;2702 (0.04), birthday;268 (0.04), work;employer;name;4035 (-0.04), education;school;name;9543 (-0.00)
+  Circle_5: education;with;name;2131 (0.05), work;start_date;31 (0.02), education;school;name;452 (-0.01), education;concentration;name;2519 (0.01), education;school;name;6545 (0.01)
+  Circle_6: id;11101 (-0.03), work;location;name;65 (-0.03), locale;1 (0.02), education;school;name;8134 (-0.02), education;classes;id;354 (-0.02)
+  Circle_7: birthday;3737 (0.07), education;classes;name;994 (-0.05), locale;1 (0.04), work;location;name;1274 (-0.03), work;position;id;1000 (-0.02)
+  Circle_8: locale;1 (0.09), education;type;0 (0.06), education;type;1 (0.04), gender;0 (0.04), work;end_date;11 (-0.03)
+  Circle_9: first_name;4831 (-0.04), work;position;name;3658 (-0.03), work;employer;id;3546 (0.02), id;11150 (0.01), education;classes;id;1015 (-0.00)
+
+==============================
+Ego ID: 11186
+Micro-F1: 0.5079 | Micro-AUC: 0.8745
+
+[Link Inference Attack - Ego 11186]
+  Avg Similarity (Connected)   : 0.9904
+  Avg Similarity (Unconnected) : 0.8282
+  => Attack AUC: 0.9602
+
+[Explanation for Ego 11186]
+  Circle_0: work;employer;name;10359 (0.06), education;school;name;12419 (-0.01), work;end_date;32 (0.01), id;14953 (-0.01), work;employer;name;10337 (-0.00)
+  Circle_1: education;concentration;id;563 (0.02), location;id;8 (-0.01), education;concentration;name;298 (-0.01), hometown;name;3065 (0.01), work;employer;id;10526 (0.01)
+  Circle_2: work;position;name;253 (0.07), birthday;846 (-0.01), work;employer;id;10638 (-0.01), work;start_date;80 (-0.01), education;school;name;12467 (0.01)
+  Circle_3: last_name;10296 (-0.06), id;15146 (0.05), last_name;7422 (0.04), locale;1 (0.04), gender;0 (0.02)
+  Circle_4: name;15033 (-0.24), work;employer;id;3583 (-0.05), name;14878 (-0.03), education;concentration;name;3355 (0.02), name;15049 (0.01)
+  Circle_5: work;employer;name;10303 (0.04), last_name;5735 (0.02), education;year;name;0 (0.01), work;with;id;836 (0.01), hometown;id;2834 (0.01)
+  Circle_6: first_name;5885 (0.13), hometown;name;762 (0.11), birthday;1419 (0.08), work;position;id;4924 (-0.07), first_name;5838 (0.07)
+  Circle_7: locale;1 (0.09), gender;0 (0.06), work;projects;id;717 (-0.04), education;type;1 (0.04), education;school;name;974 (0.04)
+  Circle_8: education;school;name;12474 (0.15), id;14953 (0.05), hometown;id;3085 (0.04), hometown;name;3024 (0.02), hometown;id;743 (-0.01)
+  Circle_9: work;employer;id;10663 (-0.14), work;position;id;5030 (0.03), work;location;name;157 (-0.02), education;school;name;12355 (0.01), education;school;name;684 (0.01)
+  Circle_10: work;description;2606 (0.04), work;start_date;136 (0.04), name;14969 (0.02), locale;1 (0.02), name;14833 (0.02)
+  Circle_11: work;description;2633 (-0.05), hometown;name;952 (-0.05), hometown;name;970 (0.04), name;15130 (0.01), id;14955 (0.01)
+
+==============================
+Ego ID: 11364
+Micro-F1: 0.7000 | Micro-AUC: 0.9122
+
+[Link Inference Attack - Ego 11364]
+  Avg Similarity (Connected)   : 0.8503
+  Avg Similarity (Unconnected) : 0.4699
+  => Attack AUC: 0.7680
+
+[Explanation for Ego 11364]
+  Circle_0: location;id;1675 (0.16), gender;0 (0.16), gender;1 (0.16), location;name;1668 (0.16), name;11337 (0.08)
+  Circle_1: gender;0 (0.16), gender;1 (0.16), location;name;1668 (0.16), location;id;1675 (0.15), locale;43 (0.08)
+  Circle_2: locale;43 (0.66), gender;0 (0.40), gender;1 (0.36), education;type;1 (0.28), education;type;0 (0.25)
+  Circle_3: gender;0 (0.44), locale;1 (0.37), education;type;1 (0.36), gender;1 (0.19), locale;43 (0.17)
+
+==============================
+Ego ID: 11410
+Micro-F1: 0.8859 | Micro-AUC: 0.9847
+
+[Link Inference Attack - Ego 11410]
+  Avg Similarity (Connected)   : 0.9950
+  Avg Similarity (Unconnected) : 0.7445
+  => Attack AUC: 0.9665
+
+[Explanation for Ego 11410]
+  Circle_0: education;year;id;19 (-0.07), education;classes;with;id;2289 (0.02), education;school;id;10809 (-0.02), education;type;1 (0.02), education;school;id;10611 (0.02)
+  Circle_1: gender;0 (0.12), locale;1 (0.11), education;type;0 (0.11), education;type;1 (0.11), education;classes;with;name;2015 (-0.10)
+  Circle_2: birthday;3220 (0.05), education;school;name;10022 (0.05), education;classes;with;id;2078 (0.05), locale;1 (0.05), education;type;1 (0.05)
+  Circle_3: locale;1 (0.08), education;type;1 (0.07), education;type;0 (0.07), gender;0 (0.06), education;with;name;2427 (0.05)
+  Circle_4: education;concentration;name;2591 (-0.08), id;11815 (0.02), education;classes;with;id;2256 (-0.01), name;11693 (-0.01), education;classes;with;id;2055 (0.01)
+  Circle_5: last_name;8229 (-0.06), education;school;name;10118 (-0.05), work;employer;id;8182 (0.05), education;with;id;2546 (0.04), name;11433 (0.03)
+  Circle_6: name;11725 (-0.07), education;school;name;10090 (-0.06), education;with;name;2466 (0.05), work;projects;with;name;433 (-0.04), id;11756 (0.03)
+  Circle_7: first_name;5039 (-0.11), last_name;8247 (0.07), education;classes;with;name;1895 (-0.04), location;name;1552 (-0.04), id;11680 (-0.02)
+  Circle_8: work;employer;id;8263 (-0.10), education;school;id;11013 (0.03), last_name;8161 (-0.03), education;classes;with;id;2141 (0.02), education;school;name;10522 (-0.02)
+
+==============================
+Ego ID: 12800
+Micro-F1: 0.8652 | Micro-AUC: 0.9908
+
+[Link Inference Attack - Ego 12800]
+  Avg Similarity (Connected)   : 0.9908
+  Avg Similarity (Unconnected) : 0.6678
+  => Attack AUC: 0.9517
+
+[Explanation for Ego 12800]
+  Circle_0: education;concentration;name;134 (0.13), education;concentration;id;40 (0.02), hometown;name;323 (0.01), work;employer;id;9010 (0.01), location;name;1008 (0.01)
+  Circle_1: last_name;2117 (-0.05), education;concentration;name;2122 (-0.03), last_name;997 (-0.02), id;13289 (-0.02), name;13186 (0.01)
+  Circle_2: education;concentration;id;105 (-0.11), id;13340 (0.07), last_name;5054 (0.05), education;school;name;11525 (0.04), location;name;1838 (0.03)
+  Circle_3: education;year;id;1 (0.25), locale;1 (0.13), education;type;1 (0.08), education;type;0 (0.07), last_name;8986 (-0.07)
+  Circle_4: locale;1 (0.05), work;employer;name;8935 (-0.05), gender;0 (0.03), education;type;1 (0.03), name;12800 (-0.02)
+  Circle_5: work;employer;name;8317 (-0.15), education;school;id;2357 (0.03), id;12926 (-0.02), locale;1 (0.02), education;school;id;3405 (-0.02)
+  Circle_6: education;school;id;216 (-0.10), location;name;558 (-0.02), work;position;id;4029 (0.01), id;13020 (-0.00), work;position;id;4221 (0.00)
+  Circle_7: locale;1 (0.14), work;employer;id;9120 (0.09), education;type;1 (0.09), education;type;0 (0.08), education;school;id;12031 (0.06)
+  Circle_8: locale;1 (0.20), education;type;1 (0.10), gender;1 (0.09), education;school;name;952 (0.09), gender;0 (0.09)
+  Circle_9: education;school;id;2591 (-0.08), work;location;id;71 (-0.07), name;13052 (0.03), work;position;name;2636 (0.02), education;school;id;4197 (0.02)
+  Circle_10: id;13026 (-0.15), id;12822 (-0.06), locale;1 (0.05), gender;0 (0.03), education;school;name;952 (0.02)
+  Circle_11: education;concentration;id;74 (-0.02), first_name;4442 (0.02), work;start_date;18 (0.02), locale;1 (0.01), last_name;2692 (-0.01)
+  Circle_12: education;concentration;name;2829 (0.15), first_name;5489 (-0.08), education;school;name;11406 (-0.07), education;school;id;12115 (-0.03), location;id;822 (0.03)
+  Circle_13: languages;id;33 (0.18), education;year;name;9 (-0.04), id;12919 (0.03), work;position;name;2208 (-0.03), education;concentration;id;1526 (-0.01)
+
+==============================
+Ego ID: 13353
+Micro-F1: 0.6286 | Micro-AUC: 0.9595
+
+[Link Inference Attack - Ego 13353]
+  Avg Similarity (Connected)   : 0.9794
+  Avg Similarity (Unconnected) : 0.4846
+  => Attack AUC: 0.9500
+
+[Explanation for Ego 13353]
+  Circle_0: locale;1 (0.07), last_name;9216 (0.04), last_name;5804 (0.02), first_name;853 (0.02), name;13329 (0.02)
+  Circle_1: locale;1 (0.14), education;type;0 (0.11), gender;1 (0.08), last_name;65 (0.07), gender;0 (0.06)
+  Circle_2: locale;1 (0.08), education;type;2 (0.06), education;type;1 (0.05), gender;0 (0.05), education;school;id;8801 (0.04)
+  Circle_3: locale;1 (0.23), education;type;0 (0.14), gender;1 (0.11), gender;0 (0.10), education;type;1 (0.07)
+  Circle_4: locale;1 (0.26), gender;0 (0.19), education;type;1 (0.15), education;school;id;8801 (0.12), education;school;name;8347 (0.12)
+  Circle_5: locale;1 (0.26), education;type;0 (0.22), education;type;1 (0.22), education;school;id;12254 (0.17), education;school;name;11586 (0.17)
+
+==============================
+Ego ID: 13789
+Micro-F1: 0.8824 | Micro-AUC: 0.9910
+
+[Link Inference Attack - Ego 13789]
+  Avg Similarity (Connected)   : 0.9855
+  Avg Similarity (Unconnected) : 0.6807
+  => Attack AUC: 0.9654
+
+[Explanation for Ego 13789]
+  Circle_0: education;school;id;12546 (-0.08), last_name;9473 (-0.03), education;concentration;name;1597 (0.02), name;13929 (-0.02), birthday;887 (-0.01)
+  Circle_1: education;school;id;12668 (-0.07), location;id;1965 (-0.03), birthday;4804 (0.03), last_name;8531 (-0.01), work;end_date;74 (-0.01)
+  Circle_2: birthday;2051 (0.02), locale;1 (0.02), name;13979 (0.01), education;school;name;7612 (0.01), education;year;name;1 (0.01)
+  Circle_3: first_name;815 (0.21), first_name;28 (-0.18), locale;1 (0.06), birthday;4824 (0.04), gender;1 (0.03)
+  Circle_4: birthday;131 (-0.09), location;name;1965 (-0.01), work;employer;name;9382 (0.01), locale;1 (0.01), education;school;name;8175 (0.00)
+  Circle_5: work;position;name;4416 (0.03), work;location;name;57 (-0.03), work;employer;name;9511 (-0.03), education;type;1 (0.00), birthday;3102 (-0.00)
+  Circle_6: locale;1 (0.05), gender;0 (0.04), education;school;id;6620 (0.02), education;type;0 (0.02), education;type;1 (0.02)
+  Circle_7: locale;1 (0.19), education;type;0 (0.15), education;school;id;12445 (0.15), education;school;name;11755 (0.15), education;type;1 (0.14)
+  Circle_8: locale;1 (0.08), work;employer;name;9516 (-0.06), name;13826 (0.06), gender;0 (0.06), birthday;844 (-0.05)
+  Circle_9: first_name;340 (0.03), languages;name;197 (-0.02), locale;1 (0.01), gender;0 (0.01), education;type;1 (0.01)
+  Circle_10: first_name;3494 (-0.07), locale;1 (0.02), gender;1 (0.01), education;school;id;12577 (0.01), education;type;1 (0.01)
+  Circle_11: locale;1 (0.14), gender;0 (0.13), education;type;0 (0.08), education;type;1 (0.07), education;school;id;12640 (-0.03)
+
+==============================
+Ego ID: 15672
+Micro-F1: 0.6335 | Micro-AUC: 0.9638
+
+[Link Inference Attack - Ego 15672]
+  Avg Similarity (Connected)   : 0.9833
+  Avg Similarity (Unconnected) : 0.7769
+  => Attack AUC: 0.9558
+
+[Explanation for Ego 15672]
+  Circle_0: education;school;name;13063 (-0.15), work;employer;id;7273 (0.11), location;name;979 (0.09), work;position;id;5232 (-0.05), last_name;1036 (-0.03)
+  Circle_1: education;school;id;13776 (0.11), location;name;236 (-0.06), id;15682 (-0.05), education;with;name;2983 (0.05), locale;1 (0.02)
+  Circle_2: last_name;205 (0.08), name;15911 (0.06), work;position;name;3604 (0.05), work;employer;id;11169 (0.03), locale;1 (0.03)
+  Circle_3: id;16012 (-0.06), work;employer;name;10899 (0.05), last_name;10685 (-0.03), location;name;185 (0.03), work;position;name;618 (0.03)
+  Circle_4: id;16122 (-0.06), work;employer;id;11318 (0.04), name;16001 (-0.03), last_name;10817 (0.03), education;school;id;8728 (-0.03)
+  Circle_5: education;school;name;9130 (0.10), education;school;id;13825 (0.10), gender;0 (0.03), name;15910 (-0.03), education;type;1 (0.02)
+  Circle_6: education;school;id;13739 (0.11), work;employer;name;10875 (0.04), first_name;3653 (0.03), education;degree;name;833 (0.02), work;employer;name;4755 (0.00)
+  Circle_7: work;end_date;42 (0.02), education;classes;id;1302 (0.02), education;school;name;12897 (0.01), id;15923 (-0.01), work;position;name;1945 (0.01)
+  Circle_8: education;school;name;12978 (-0.06), education;school;name;13041 (0.03), last_name;10700 (-0.02), last_name;10685 (-0.02), work;description;2796 (0.02)
+  Circle_9: first_name;5991 (-0.08), name;15863 (0.01), education;school;id;13802 (0.00), name;15698 (-0.00), education;school;id;3147 (0.00)
+  Circle_10: name;15955 (-0.08), work;start_date;35 (-0.07), work;location;id;154 (-0.05), languages;name;26 (-0.05), birthday;1113 (0.03)
+  Circle_11: education;school;name;12922 (-0.02), work;projects;id;775 (-0.01), hometown;id;195 (-0.01), education;year;id;31 (0.01), work;position;name;540 (0.00)
+  Circle_12: education;school;name;13036 (0.04), education;school;id;13594 (-0.03), work;employer;id;11257 (-0.02), education;school;name;12996 (-0.02), id;16089 (0.01)
+  Circle_13: last_name;10719 (0.03), name;16107 (0.03), education;concentration;name;2350 (0.02), work;with;id;946 (-0.02), name;15628 (-0.01)
+  Circle_14: languages;name;487 (0.09), id;15723 (0.09), education;classes;with;id;2513 (0.05), gender;0 (0.02), locale;1 (0.01)
+  Circle_15: work;position;id;39 (-0.08), education;degree;name;818 (0.03), location;id;48 (0.03), education;degree;name;834 (-0.02), work;employer;id;11174 (0.01)
+  Circle_16: education;year;id;1 (-0.02), work;position;name;5164 (0.02), name;15785 (0.02), work;employer;name;10945 (-0.01), work;position;name;5125 (-0.01)
+  Circle_17: work;location;id;1702 (0.11), education;type;1 (0.04), gender;0 (0.04), locale;1 (0.03), education;school;id;3605 (0.03)
+  Circle_18: languages;name;41 (0.11), education;type;1 (0.06), location;id;236 (0.05), location;name;236 (0.05), education;type;0 (0.05)
+  Circle_19: education;type;1 (0.13), locale;1 (0.12), gender;0 (0.12), education;type;0 (0.11), location;id;236 (0.09)
+  Circle_20: work;employer;name;10748 (-0.04), education;concentration;name;92 (-0.04), education;school;name;12852 (-0.03), education;school;name;8054 (0.02), location;name;2132 (0.02)
+  Circle_21: education;school;id;13606 (-0.05), education;school;name;11151 (0.03), last_name;10856 (0.03), work;employer;id;11293 (0.03), education;concentration;id;3762 (0.02)
+  Circle_22: education;school;name;2636 (-0.06), name;15604 (-0.01), work;employer;name;10891 (-0.00), first_name;3736 (0.00), id;16135 (0.00)
+  Circle_23: work;location;id;827 (-0.09), education;school;name;12965 (-0.09), work;location;id;1709 (0.04), education;school;id;13865 (-0.04), work;employer;name;10881 (-0.02)
+  Circle_24: name;15853 (0.06), last_name;10819 (0.04), education;school;name;12922 (-0.03), work;position;id;458 (0.02), work;employer;name;10744 (-0.01)
+
+==============================
+Ego ID: 16203
+Micro-F1: 0.7879 | Micro-AUC: 0.9167
+
+[Link Inference Attack - Ego 16203]
+  Avg Similarity (Connected)   : 0.9707
+  Avg Similarity (Unconnected) : 0.4864
+  => Attack AUC: 0.9586
+
+[Explanation for Ego 16203]
+  Circle_0: locale;1 (0.35), education;type;1 (0.30), education;school;name;7300 (0.30), education;school;id;7680 (0.28), education;type;2 (0.27)
+  Circle_1: locale;1 (0.30), education;type;1 (0.27), gender;0 (0.25), education;type;2 (0.17), education;type;0 (0.16)
+  Circle_2: locale;1 (0.08), gender;0 (0.08), education;type;1 (0.05), work;start_date;2 (0.03), work;end_date;5 (0.03)
+  Circle_3: gender;0 (0.18), education;type;1 (0.18), education;school;name;13084 (0.17), locale;1 (0.17), education;school;id;13891 (0.14)
+
+==============================
+Ego ID: 16378
+Micro-F1: 0.6829 | Micro-AUC: 0.9559
+
+[Link Inference Attack - Ego 16378]
+  Avg Similarity (Connected)   : 0.9773
+  Avg Similarity (Unconnected) : 0.8047
+  => Attack AUC: 0.9081
+
+[Explanation for Ego 16378]
+  Circle_0: locale;1 (0.07), education;type;1 (0.05), education;school;id;3263 (0.05), education;school;name;3103 (0.05), education;type;0 (0.04)
+  Circle_1: education;school;name;13210 (-0.08), last_name;2700 (0.05), hometown;id;3016 (-0.04), education;school;id;14043 (0.04), birthday;855 (0.02)
+  Circle_2: education;school;name;6091 (0.03), education;concentration;id;891 (0.03), last_name;7560 (-0.02), name;16380 (0.02), education;school;name;13362 (0.02)
+  Circle_3: id;16501 (0.12), education;year;id;64 (-0.03), work;description;2890 (-0.02), work;employer;name;11098 (0.02), work;start_date;465 (-0.02)
+  Circle_4: locale;1 (0.15), education;type;0 (0.10), gender;1 (0.10), education;type;1 (0.08), education;concentration;id;658 (-0.07)
+
+==============================
+Ego ID: 16642
+Micro-F1: 0.8627 | Micro-AUC: 0.9876
+
+[Link Inference Attack - Ego 16642]
+  Avg Similarity (Connected)   : 0.9866
+  Avg Similarity (Unconnected) : 0.6415
+  => Attack AUC: 0.9786
+
+[Explanation for Ego 16642]
+  Circle_0: work;position;name;2864 (0.13), name;16705 (-0.09), last_name;11051 (-0.04), education;school;id;7963 (-0.04), locale;1 (0.04)
+  Circle_1: locale;1 (0.05), gender;1 (0.04), education;type;0 (0.03), first_name;2086 (-0.02), education;type;1 (0.02)
+  Circle_2: name;16591 (-0.06), name;16621 (0.05), education;year;id;27 (-0.05), location;name;265 (-0.04), name;16555 (-0.03)
+  Circle_3: locale;1 (0.10), gender;1 (0.09), education;type;1 (0.06), education;type;0 (0.06), languages;name;170 (0.02)
+  Circle_4: locale;1 (0.10), gender;1 (0.09), education;type;1 (0.06), education;type;0 (0.06), work;start_date;2 (0.02)
+  Circle_5: id;16667 (0.19), name;16641 (0.08), education;school;id;9947 (-0.06), last_name;5218 (-0.04), work;description;3029 (0.04)
+  Circle_6: work;start_date;185 (0.03), work;start_date;149 (0.03), first_name;2167 (0.02), education;school;name;11443 (0.01), education;school;id;12439 (0.00)
+  Circle_7: locale;1 (0.16), gender;1 (0.08), education;type;0 (0.08), work;end_date;120 (-0.07), gender;0 (0.06)
+  Circle_8: education;school;id;14310 (0.02), work;start_date;19 (0.00), name;16693 (0.00), work;position;name;5376 (0.00), last_name;11169 (0.00)
+  Circle_9: education;school;id;423 (-0.07), locale;1 (0.03), education;school;name;13373 (0.02), education;school;id;14204 (0.02), education;school;id;14297 (0.02)
+  Circle_10: name;16757 (-0.08), work;employer;id;790 (0.05), education;school;name;3131 (-0.03), education;type;0 (0.02), locale;1 (0.02)
+  Circle_11: locale;1 (0.03), education;type;1 (0.02), work;position;name;5388 (0.02), first_name;955 (0.02), education;type;0 (0.02)
+  Circle_12: locale;1 (0.26), gender;1 (0.13), education;type;1 (0.13), gender;0 (0.12), education;type;0 (0.10)
+  Circle_13: locale;1 (0.17), education;type;0 (0.10), location;id;546 (0.09), location;name;540 (0.09), gender;0 (0.08)
+  Circle_14: locale;1 (0.13), location;name;540 (0.08), location;id;546 (0.08), education;type;0 (0.08), education;type;1 (0.06)
+  Circle_15: work;location;id;1765 (0.08), location;name;2209 (0.07), work;position;name;5386 (0.03), location;name;1990 (-0.02), locale;1 (0.01)
+  Circle_16: locale;1 (0.10), gender;1 (0.09), education;type;1 (0.06), education;type;0 (0.06), work;start_date;2 (0.02)
+
+==============================
+Ego ID: 16869
+Micro-F1: 0.7391 | Micro-AUC: 0.9519
+
+[Link Inference Attack - Ego 16869]
+  Avg Similarity (Connected)   : 0.9705
+  Avg Similarity (Unconnected) : 0.5858
+  => Attack AUC: 0.9484
+
+[Explanation for Ego 16869]
+  Circle_0: gender;1 (0.10), location;id;176 (0.10), locale;1 (0.10), location;name;176 (0.10), locale;0 (0.05)
+  Circle_1: education;type;0 (0.17), gender;1 (0.13), locale;1 (0.13), locale;0 (0.11), hometown;name;3301 (0.11)
+  Circle_2: education;type;0 (0.24), locale;0 (0.23), gender;0 (0.22), gender;1 (0.19), locale;1 (0.19)
+  Circle_3: gender;0 (0.23), locale;0 (0.19), hometown;name;3301 (0.15), hometown;id;3314 (0.14), locale;1 (0.11)
+  Circle_4: locale;0 (0.13), gender;1 (0.12), locale;1 (0.06), gender;0 (0.05), hometown;name;1226 (0.04)
+
+==============================
+Ego ID: 17951
+Micro-F1: 0.8276 | Micro-AUC: 0.9408
+
+[Link Inference Attack - Ego 17951]
+  Avg Similarity (Connected)   : 0.9766
+  Avg Similarity (Unconnected) : 0.4819
+  => Attack AUC: 0.9733
+
+[Explanation for Ego 17951]
+  Circle_0: locale;0 (0.16), locale;1 (0.11), gender;0 (0.11), gender;1 (0.10), education;type;0 (0.10)
+  Circle_1: gender;1 (0.18), locale;1 (0.17), work;employer;id;10862 (0.16), work;employer;name;1907 (0.16), location;id;658 (0.16)
+  Circle_2: locale;0 (0.28), locale;1 (0.28), gender;1 (0.27), gender;0 (0.26), education;type;0 (0.25)
+  Circle_3: locale;0 (0.44), gender;0 (0.30), gender;1 (0.25), education;type;0 (0.19), education;type;1 (0.19)
+  Circle_4: locale;1 (0.41), education;type;1 (0.33), gender;1 (0.31), last_name;11740 (0.31), gender;0 (0.17)
+
+==============================
+Ego ID: 18005
+Micro-F1: 0.2500 | Micro-AUC: 0.9861
+
+[Link Inference Attack - Ego 18005]
+  Avg Similarity (Connected)   : 0.9948
+  Avg Similarity (Unconnected) : 0.8400
+  => Attack AUC: 0.8713
+
+[Explanation for Ego 18005]
+  Circle_0: education;school;name;7361 (0.03), education;with;id;3260 (-0.03), hometown;name;3516 (-0.01), work;employer;id;4843 (0.01), work;projects;description;324 (-0.01)
+  Circle_1: education;school;id;15467 (0.09), work;description;3257 (-0.05), location;id;936 (0.03), work;employer;name;12203 (-0.02), work;employer;id;12722 (0.02)
+  Circle_2: name;18335 (0.18), work;location;name;1264 (-0.11), name;18240 (-0.09), education;school;name;8772 (0.07), location;id;34 (-0.06)
+
+==============================
+Ego ID: 18543
+Micro-F1: 0.8571 | Micro-AUC: 0.9283
+
+[Link Inference Attack - Ego 18543]
+  Avg Similarity (Connected)   : 0.9392
+  Avg Similarity (Unconnected) : 0.5191
+  => Attack AUC: 0.9215
+
+[Explanation for Ego 18543]
+  Circle_0: locale;0 (0.27), education;type;0 (0.21), gender;1 (0.16), gender;0 (0.15), last_name;11985 (0.10)
+  Circle_1: locale;1 (0.17), gender;0 (0.11), gender;1 (0.11), education;type;1 (0.11), locale;0 (0.05)
+  Circle_2: gender;0 (0.25), locale;0 (0.25), locale;1 (0.21), gender;1 (0.21), location;name;2406 (0.12)
+  Circle_3: locale;0 (0.16), gender;0 (0.16), gender;1 (0.11), education;type;0 (0.11), education;type;1 (0.11)
+  Circle_4: education;type;0 (0.31), gender;0 (0.23), locale;0 (0.22), locale;1 (0.16), gender;1 (0.14)
+
+==============================
+Ego ID: 19129
+Micro-F1: 0.4615 | Micro-AUC: 0.7053
+
+[Link Inference Attack - Ego 19129]
+  Avg Similarity (Connected)   : 0.9103
+  Avg Similarity (Unconnected) : 0.5809
+  => Attack AUC: 0.8879
+
+[Explanation for Ego 19129]
+  Circle_0: gender;0 (0.35), education;type;1 (0.22), locale;32 (0.22), gender;1 (0.16), locale;1 (0.15)
+  Circle_1: gender;1 (0.06), locale;1 (0.03), education;type;1 (0.03), education;type;0 (0.02), last_name;12414 (0.02)
+  Circle_2: locale;32 (0.25), gender;0 (0.19), education;type;1 (0.13), education;type;0 (0.11), work;start_date;2 (0.08)
+  Circle_3: locale;32 (0.21), gender;0 (0.17), hometown;id;3695 (0.09), hometown;name;3681 (0.09), education;type;0 (0.07)
+  Circle_4: gender;1 (0.15), locale;1 (0.15), gender;0 (0.12), education;type;1 (0.10), education;type;0 (0.09)
+
+==============================
+Ego ID: 19788
+Micro-F1: 0.7227 | Micro-AUC: 0.9518
+
+[Link Inference Attack - Ego 19788]
+  Avg Similarity (Connected)   : 0.9698
+  Avg Similarity (Unconnected) : 0.7118
+  => Attack AUC: 0.9421
+
+[Explanation for Ego 19788]
+  Circle_0: first_name;6195 (0.04), education;school;id;13807 (0.02), last_name;12749 (0.02), education;school;id;16768 (-0.01), gender;0 (0.01)
+  Circle_1: locale;0 (0.05), gender;1 (0.04), gender;0 (0.04), locale;1 (0.03), work;position;id;6364 (0.01)
+  Circle_2: education;degree;name;474 (0.09), first_name;4403 (-0.06), locale;1 (0.05), gender;0 (0.04), gender;1 (0.03)
+  Circle_3: location;name;2593 (-0.17), education;school;name;12794 (-0.03), work;employer;name;13545 (-0.03), work;start_date;129 (-0.02), location;name;2592 (-0.01)
+  Circle_4: hometown;name;3784 (-0.03), locale;1 (0.02), gender;1 (0.01), education;type;0 (0.01), education;type;1 (0.00)
+  Circle_5: gender;0 (0.18), locale;1 (0.16), education;type;0 (0.11), work;employer;name;10962 (0.11), work;employer;id;11355 (0.11)
+  Circle_6: first_name;7187 (-0.02), gender;0 (0.01), education;type;0 (0.00), locale;1 (0.00), name;19654 (-0.00)
+  Circle_7: gender;0 (0.01), education;type;0 (0.00), locale;1 (0.00), name;19674 (-0.00), first_name;883 (-0.00)
+  Circle_8: last_name;12830 (0.14), work;description;3583 (0.04), gender;0 (0.04), locale;1 (0.02), education;type;0 (0.02)
+  Circle_9: first_name;444 (-0.11), name;19723 (0.11), work;employer;name;13558 (0.02), name;19696 (0.01), work;employer;id;14130 (0.00)
+  Circle_10: work;start_date;26 (0.12), name;19684 (-0.02), education;school;name;15752 (-0.01), work;employer;name;5312 (-0.01), education;year;id;30 (-0.00)
+  Circle_11: education;school;name;15418 (0.05), gender;0 (0.02), name;19870 (-0.02), work;employer;id;14076 (0.02), locale;1 (0.02)
+  Circle_12: work;employer;id;12210 (-0.10), work;employer;id;14089 (-0.06), locale;1 (0.06), gender;1 (0.05), birthday;5833 (0.05)
+  Circle_13: locale;1 (0.17), gender;0 (0.15), education;type;0 (0.09), education;type;1 (0.07), gender;1 (0.06)
+  Circle_14: locale;1 (0.09), gender;1 (0.09), education;type;1 (0.04), education;type;2 (0.02), work;employer;name;13533 (0.02)
+  Circle_15: gender;0 (0.11), locale;1 (0.10), locale;0 (0.09), gender;1 (0.07), education;type;0 (0.03)
+
+==============================
+Ego ID: 22650
+Micro-F1: 0.8615 | Micro-AUC: 0.9879
+
+[Link Inference Attack - Ego 22650]
+  Avg Similarity (Connected)   : 0.9867
+  Avg Similarity (Unconnected) : 0.6967
+  => Attack AUC: 0.9524
+
+[Explanation for Ego 22650]
+  Circle_0: locale;1 (0.03), education;type;1 (0.03), education;type;0 (0.03), education;school;name;18155 (0.02), work;description;3986 (0.02)
+  Circle_1: locale;1 (0.02), work;with;name;591 (0.02), gender;0 (0.02), birthday;471 (-0.01), education;type;1 (0.01)
+  Circle_2: locale;1 (0.05), work;position;name;6789 (-0.05), gender;0 (0.05), work;employer;id;15945 (0.02), work;employer;name;15314 (0.02)
+  Circle_3: locale;1 (0.04), education;type;1 (0.03), education;type;0 (0.03), education;school;id;11785 (-0.02), gender;1 (0.02)
+  Circle_4: locale;1 (0.08), education;type;1 (0.05), education;type;0 (0.05), gender;1 (0.05), gender;0 (0.04)
+  Circle_5: locale;1 (0.08), education;type;1 (0.05), education;type;0 (0.05), gender;0 (0.05), education;school;id;11785 (0.05)
+  Circle_6: locale;1 (0.06), education;type;1 (0.06), education;type;0 (0.06), gender;0 (0.06), education;school;name;8166 (0.05)
+  Circle_7: work;position;id;6963 (0.03), locale;1 (0.02), gender;0 (0.02), work;start_date;281 (-0.02), work;start_date;118 (-0.00)
+  Circle_8: work;location;name;103 (0.12), work;start_date;276 (-0.04), birthday;6289 (0.04), work;description;3963 (-0.02), work;end_date;188 (-0.02)
+  Circle_9: locale;1 (0.30), gender;0 (0.23), education;type;0 (0.15), work;employer;name;7586 (0.15), work;employer;id;7812 (0.15)
+  Circle_10: locale;1 (0.03), gender;0 (0.02), education;type;0 (0.02), education;type;1 (0.02), education;school;name;18127 (-0.01)
+  Circle_11: work;description;3970 (-0.04), locale;1 (0.04), gender;0 (0.03), work;position;id;7011 (0.02), work;end_date;139 (0.01)
+
+==============================
+Ego ID: 22824
+Micro-F1: 0.5200 | Micro-AUC: 0.9026
+
+[Link Inference Attack - Ego 22824]
+  Avg Similarity (Connected)   : 0.9663
+  Avg Similarity (Unconnected) : 0.7394
+  => Attack AUC: 0.9412
+
+[Explanation for Ego 22824]
+  Circle_0: gender;0 (0.03), name;22849 (0.02), locale;1 (0.01), work;position;name;390 (-0.00), education;school;id;19442 (0.00)
+  Circle_1: gender;0 (0.04), locale;1 (0.03), last_name;14295 (0.01), location;id;195 (0.01), location;name;195 (0.01)
+  Circle_2: work;employer;id;16163 (0.17), gender;0 (0.08), languages;id;687 (-0.06), education;type;1 (0.06), education;type;0 (0.05)
+  Circle_3: gender;0 (0.03), locale;1 (0.02), education;concentration;id;616 (0.00), work;with;name;1415 (-0.00), education;school;name;18302 (0.00)
+  Circle_4: gender;0 (0.06), locale;1 (0.04), education;with;name;4312 (0.03), education;with;id;4358 (0.02), education;type;0 (0.02)
+  Circle_5: work;position;id;7089 (0.11), id;22890 (0.03), gender;0 (0.03), work;employer;id;16086 (0.02), education;type;0 (0.01)
+  Circle_6: first_name;463 (0.05), last_name;14152 (0.05), education;school;id;19507 (0.02), gender;0 (0.02), education;school;id;19443 (-0.01)
+  Circle_7: gender;0 (0.03), locale;1 (0.02), education;type;1 (0.01), education;type;0 (0.01), location;id;195 (0.01)
+  Circle_8: education;school;name;18294 (-0.04), work;projects;name;1135 (-0.03), locale;1 (0.02), work;employer;id;16118 (0.01), education;type;1 (0.01)
+  Circle_9: education;school;id;19491 (0.06), work;employer;name;15508 (0.04), locale;1 (0.02), birthday;90 (0.02), education;with;id;4357 (-0.02)
+  Circle_10: last_name;3473 (0.04), education;school;name;18342 (0.03), gender;0 (0.03), locale;1 (0.02), work;employer;id;16128 (0.02)
+
+==============================
+Ego ID: 23157
+Micro-F1: 0.8414 | Micro-AUC: 0.9637
+
+[Link Inference Attack - Ego 23157]
+  Avg Similarity (Connected)   : 0.9695
+  Avg Similarity (Unconnected) : 0.5658
+  => Attack AUC: 0.9768
+
+[Explanation for Ego 23157]
+  Circle_0: name;22973 (0.13), education;concentration;id;1041 (-0.02), locale;1 (0.02), gender;0 (0.02), id;23182 (0.00)
+  Circle_1: locale;2 (0.13), education;type;0 (0.07), gender;1 (0.05), gender;0 (0.05), education;school;id;19601 (0.02)
+  Circle_2: locale;2 (0.12), education;type;1 (0.09), education;type;0 (0.08), gender;1 (0.06), gender;0 (0.06)
+  Circle_3: work;employer;id;16262 (-0.10), locale;1 (0.07), location;id;265 (0.05), location;name;265 (0.05), gender;1 (0.05)
+  Circle_4: locale;1 (0.23), education;type;1 (0.15), education;type;0 (0.15), gender;0 (0.14), gender;1 (0.13)
+  Circle_5: first_name;8206 (0.17), gender;0 (0.09), locale;2 (0.06), locale;1 (0.04), education;type;1 (0.02)
+  Circle_6: locale;2 (0.30), gender;0 (0.30), education;type;0 (0.12), education;type;1 (0.12), gender;1 (0.09)
+  Circle_7: gender;0 (0.18), locale;2 (0.11), locale;1 (0.07), education;type;1 (0.06), education;type;0 (0.04)
+  Circle_8: gender;0 (0.10), education;type;0 (0.04), education;type;1 (0.03), education;concentration;id;2288 (0.03), locale;1 (0.02)
+  Circle_9: locale;1 (0.12), gender;1 (0.09), education;type;0 (0.09), gender;0 (0.08), education;type;1 (0.07)
+  Circle_10: gender;0 (0.05), education;school;name;18435 (0.02), education;school;id;19601 (0.02), locale;2 (0.02), education;type;0 (0.02)
+  Circle_11: id;23196 (0.20), locale;1 (0.12), education;type;1 (0.08), gender;0 (0.06), education;type;0 (0.05)
+  Circle_12: locale;1 (0.15), education;type;1 (0.10), education;degree;id;1186 (0.09), gender;1 (0.08), education;type;0 (0.07)
+  Circle_13: gender;0 (0.07), locale;2 (0.05), education;type;1 (0.04), education;school;name;6048 (0.03), education;school;id;6363 (0.02)
+  Circle_14: locale;1 (0.05), gender;0 (0.04), id;23267 (-0.03), work;employer;id;16310 (-0.02), education;type;0 (0.02)
+
+==============================
+Ego ID: 23299
+Micro-F1: 0.8585 | Micro-AUC: 0.9841
+
+[Link Inference Attack - Ego 23299]
+  Avg Similarity (Connected)   : 0.9940
+  Avg Similarity (Unconnected) : 0.7293
+  => Attack AUC: 0.9808
+
+[Explanation for Ego 23299]
+  Circle_0: locale;11 (0.07), work;description;4134 (-0.07), gender;0 (0.07), education;type;1 (0.05), languages;id;769 (0.04)
+  Circle_1: work;employer;id;16376 (0.04), id;23628 (-0.03), birthday;4150 (0.02), education;school;id;20049 (0.01), education;school;id;19877 (-0.01)
+  Circle_2: education;concentration;id;4838 (-0.08), education;school;name;18565 (-0.06), work;position;name;6996 (-0.02), location;name;382 (0.01), hometown;name;4148 (0.00)
+  Circle_3: work;projects;id;1154 (-0.18), education;school;id;19876 (0.13), first_name;8232 (-0.05), work;description;4130 (0.05), last_name;14683 (-0.04)
+  Circle_4: last_name;14536 (0.02), work;projects;id;1161 (-0.02), first_name;8287 (0.02), birthday;2383 (-0.02), name;23443 (0.02)
+  Circle_5: last_name;14650 (-0.04), last_name;14820 (-0.03), name;23446 (-0.03), work;location;name;2160 (0.02), education;school;name;18882 (-0.02)
+  Circle_6: work;employer;id;16459 (-0.04), work;projects;name;1157 (0.04), education;concentration;id;4964 (0.03), education;concentration;id;4918 (0.02), work;employer;name;6579 (0.02)
+  Circle_7: id;23384 (0.13), name;23338 (0.03), education;concentration;name;4776 (0.03), work;location;name;2188 (0.02), education;with;id;4416 (-0.02)
+  Circle_8: education;concentration;id;4999 (0.06), education;concentration;name;4742 (0.04), work;position;id;7165 (0.04), birthday;6428 (0.02), work;location;name;232 (0.02)
+  Circle_9: locale;11 (0.08), gender;0 (0.05), education;type;0 (0.03), hometown;id;4109 (0.03), hometown;name;4095 (0.03)
+  Circle_10: education;concentration;name;4739 (0.08), work;position;name;145 (-0.07), last_name;14530 (0.05), work;position;id;7257 (-0.04), work;position;name;1441 (0.03)
+  Circle_11: birthday;220 (-0.06), name;23457 (-0.04), id;23459 (0.04), work;employer;name;15804 (0.04), education;concentration;name;4707 (-0.03)
+  Circle_12: hometown;name;4121 (-0.09), education;school;name;18742 (-0.05), education;school;id;19698 (-0.05), education;school;name;18599 (0.02), id;23679 (-0.01)
+  Circle_13: education;school;name;11727 (0.04), work;position;id;7210 (-0.02), work;position;id;7245 (-0.01), id;23534 (-0.01), work;position;id;7270 (0.01)
+  Circle_14: work;position;name;6996 (0.06), locale;1 (0.04), gender;1 (0.03), education;school;id;19972 (0.02), education;type;2 (0.02)
+
+==============================
+Ego ID: 24758
+Micro-F1: 0.7778 | Micro-AUC: 0.9894
+
+[Link Inference Attack - Ego 24758]
+  Avg Similarity (Connected)   : 0.9227
+  Avg Similarity (Unconnected) : 0.3755
+  => Attack AUC: 0.9338
+
+[Explanation for Ego 24758]
+  Circle_0: gender;1 (0.18), education;type;1 (0.17), education;type;0 (0.14), locale;1 (0.13), last_name;15542 (0.12)
+  Circle_1: locale;2 (0.31), education;type;1 (0.25), gender;1 (0.24), gender;0 (0.20), hometown;id;4324 (0.18)
+  Circle_2: locale;2 (0.25), gender;0 (0.25), education;type;0 (0.19), location;id;2995 (0.19), location;name;2983 (0.19)
+  Circle_3: gender;0 (0.26), education;type;0 (0.25), locale;2 (0.19), education;type;1 (0.18), locale;21 (0.12)
+  Circle_4: education;type;1 (0.27), education;type;2 (0.27), languages;id;50 (0.20), languages;name;45 (0.20), education;school;name;1045 (0.20)
+
+==============================
+Ego ID: 24857
+Micro-F1: 0.8174 | Micro-AUC: 0.9890
+
+[Link Inference Attack - Ego 24857]
+  Avg Similarity (Connected)   : 0.9796
+  Avg Similarity (Unconnected) : 0.6825
+  => Attack AUC: 0.9479
+
+[Explanation for Ego 24857]
+  Circle_0: location;id;3027 (-0.04), work;employer;name;16723 (0.04), work;position;name;822 (0.04), hometown;id;3764 (-0.03), name;5910 (0.02)
+  Circle_1: work;with;id;1518 (0.03), education;school;id;20728 (-0.03), education;concentration;id;5205 (0.02), hometown;id;2300 (0.01), id;24913 (-0.01)
+  Circle_2: locale;1 (0.13), gender;0 (0.12), education;type;2 (0.11), education;type;1 (0.09), education;type;0 (0.08)
+  Circle_3: locale;1 (0.18), gender;0 (0.17), education;type;1 (0.16), education;type;0 (0.13), location;id;56 (0.11)
+  Circle_4: education;school;id;20779 (0.02), locale;1 (0.02), name;24730 (0.02), first_name;8686 (-0.02), education;type;2 (0.01)
+  Circle_5: work;end_date;103 (0.08), locale;1 (0.07), education;type;1 (0.06), education;type;0 (0.06), gender;0 (0.04)
+  Circle_6: work;employer;id;12939 (0.06), work;position;id;487 (0.05), last_name;12682 (-0.04), education;with;name;4533 (0.03), education;year;name;17 (0.02)
+  Circle_7: locale;1 (0.05), gender;0 (0.04), education;classes;from;name;1118 (-0.04), education;type;1 (0.03), education;type;0 (0.03)
+
+==============================
+Ego ID: 25159
+Micro-F1: 0.9020 | Micro-AUC: 0.9910
+
+[Link Inference Attack - Ego 25159]
+  Avg Similarity (Connected)   : 0.9883
+  Avg Similarity (Unconnected) : 0.5457
+  => Attack AUC: 0.9695
+
+[Explanation for Ego 25159]
+  Circle_0: locale;1 (0.39), education;type;0 (0.28), gender;0 (0.23), education;type;1 (0.23), education;school;id;21048 (0.18)
+  Circle_1: locale;1 (0.08), education;type;0 (0.07), education;type;1 (0.07), gender;0 (0.05), work;employer;name;16777 (0.04)
+  Circle_2: locale;1 (0.28), education;school;name;19780 (0.21), education;school;id;21048 (0.21), education;type;0 (0.19), hometown;id;3372 (0.19)
+  Circle_3: locale;1 (0.08), education;type;1 (0.05), education;type;0 (0.05), gender;1 (0.04), gender;0 (0.03)
+  Circle_4: gender;0 (0.11), locale;1 (0.10), education;school;id;860 (0.10), education;school;name;830 (0.09), education;type;1 (0.08)
+  Circle_5: locale;1 (0.06), gender;1 (0.06), education;type;0 (0.05), education;type;1 (0.04), work;employer;name;16742 (0.01)
+  Circle_6: locale;1 (0.27), education;type;0 (0.17), gender;1 (0.17), education;type;1 (0.15), gender;0 (0.09)
+  Circle_7: gender;1 (0.06), locale;1 (0.06), work;start_date;2 (0.02), location;id;1217 (0.01), location;name;1210 (0.01)
+  Circle_8: locale;1 (0.09), gender;1 (0.07), name;24978 (-0.02), work;start_date;2 (0.02), location;id;1217 (0.02)
+  Circle_9: locale;1 (0.12), education;type;1 (0.08), education;type;0 (0.08), gender;1 (0.06), location;name;538 (0.04)
+  Circle_10: work;employer;name;16742 (-0.09), locale;1 (0.07), education;type;1 (0.06), education;type;0 (0.06), gender;1 (0.05)
+  Circle_11: locale;1 (0.18), education;type;0 (0.14), education;type;1 (0.13), gender;0 (0.09), gender;1 (0.08)
+  Circle_12: gender;0 (0.09), education;school;id;860 (0.08), locale;1 (0.08), education;school;name;830 (0.08), education;type;1 (0.06)
+  Circle_13: education;year;name;28 (0.07), locale;1 (0.05), education;type;0 (0.03), education;type;1 (0.03), gender;0 (0.03)
+
+==============================
+Ego ID: 25568
+Micro-F1: 0.7843 | Micro-AUC: 0.9436
+
+[Link Inference Attack - Ego 25568]
+  Avg Similarity (Connected)   : 0.9927
+  Avg Similarity (Unconnected) : 0.6511
+  => Attack AUC: 0.9700
+
+[Explanation for Ego 25568]
+  Circle_0: gender;0 (0.09), education;type;1 (0.09), locale;43 (0.07), education;type;0 (0.05), education;school;name;9648 (0.04)
+  Circle_1: gender;0 (0.14), education;type;1 (0.12), locale;43 (0.10), education;type;0 (0.07), education;school;name;9648 (0.07)
+  Circle_2: gender;0 (0.25), education;type;1 (0.20), work;employer;name;1318 (0.20), work;employer;id;1917 (0.19), location;name;1671 (0.15)
+  Circle_3: gender;0 (0.16), education;type;1 (0.13), education;type;0 (0.10), locale;1 (0.10), education;type;2 (0.09)
+  Circle_4: gender;0 (0.05), education;type;1 (0.05), name;25469 (-0.04), location;name;1671 (0.03), location;id;1678 (0.03)
+  Circle_5: work;employer;name;17132 (-0.11), education;year;name;0 (-0.07), gender;0 (0.06), education;concentration;id;4048 (0.04), locale;43 (0.03)
+  Circle_6: name;25389 (0.06), gender;0 (0.05), locale;43 (0.04), locale;1 (0.02), education;type;1 (0.02)
+  Circle_7: education;concentration;name;5104 (0.04), gender;0 (0.04), education;type;1 (0.03), location;id;2960 (0.03), location;name;2948 (0.03)
+  Circle_8: gender;0 (0.19), education;type;1 (0.16), work;employer;name;1318 (0.16), work;employer;id;1917 (0.15), id;25631 (0.12)
+  Circle_9: education;type;1 (0.13), gender;0 (0.12), locale;43 (0.09), education;type;0 (0.08), education;school;id;10189 (0.06)
+  Circle_10: gender;0 (0.14), locale;43 (0.05), locale;1 (0.04), education;type;0 (0.02), first_name;8894 (0.02)
+  Circle_11: gender;0 (0.08), locale;43 (0.05), locale;1 (0.02), gender;1 (0.01), work;with;id;1544 (-0.00)
+
+==============================
+Ego ID: 25773
+Micro-F1: 0.7304 | Micro-AUC: 0.9637
+
+[Link Inference Attack - Ego 25773]
+  Avg Similarity (Connected)   : 0.9769
+  Avg Similarity (Unconnected) : 0.6916
+  => Attack AUC: 0.9384
+
+[Explanation for Ego 25773]
+  Circle_0: work;location;id;154 (0.03), work;position;name;625 (0.03), locale;0 (0.00), id;25850 (0.00), name;25686 (-0.00)
+  Circle_1: education;type;1 (0.10), gender;1 (0.09), locale;0 (0.09), gender;0 (0.05), education;type;0 (0.05)
+  Circle_2: education;school;name;30 (0.05), education;school;name;20284 (-0.02), gender;0 (0.01), last_name;16267 (0.00), first_name;9002 (-0.00)
+  Circle_3: first_name;9013 (-0.03), locale;1 (0.03), gender;1 (0.02), gender;0 (0.02), education;type;0 (0.02)
+  Circle_4: work;position;id;7777 (0.05), gender;0 (0.04), locale;1 (0.02), first_name;8989 (0.01), id;25798 (0.01)
+  Circle_5: gender;0 (0.12), education;type;1 (0.09), locale;0 (0.07), education;type;0 (0.07), education;school;name;4092 (0.07)
+  Circle_6: education;school;id;21539 (-0.01), last_name;2910 (0.00), id;25987 (-0.00), id;25780 (0.00), education;school;id;21599 (-0.00)
+  Circle_7: gender;0 (0.18), education;type;1 (0.15), gender;1 (0.13), locale;1 (0.13), locale;43 (0.11)
+  Circle_8: name;25574 (-0.19), first_name;9065 (-0.03), work;employer;name;17342 (0.00), gender;0 (0.00), first_name;8910 (0.00)
+  Circle_9: work;employer;id;17956 (-0.01), gender;0 (0.01), education;concentration;name;704 (0.01), education;year;id;25 (-0.00), locale;0 (0.00)
+  Circle_10: gender;0 (0.10), education;type;1 (0.07), locale;1 (0.07), locale;43 (0.06), gender;1 (0.06)
+
+==============================
+Ego ID: 26321
+Micro-F1: 0.3846 | Micro-AUC: 0.8561
+
+[Link Inference Attack - Ego 26321]
+  Avg Similarity (Connected)   : 0.9821
+  Avg Similarity (Unconnected) : 0.7615
+  => Attack AUC: 0.9495
+
+[Explanation for Ego 26321]
+  Circle_0: locale;1 (0.05), education;type;1 (0.02), gender;0 (0.02), education;type;0 (0.02), work;start_date;553 (0.02)
+  Circle_1: locale;1 (0.08), education;type;0 (0.06), education;type;1 (0.06), gender;1 (0.04), first_name;443 (0.03)
+  Circle_2: locale;1 (0.16), gender;0 (0.12), education;type;1 (0.11), education;type;0 (0.07), work;employer;name;17484 (0.06)
+  Circle_3: locale;1 (0.04), education;type;0 (0.03), work;projects;description;471 (-0.02), education;type;1 (0.02), gender;0 (0.02)
+  Circle_4: education;school;name;20498 (-0.06), work;employer;id;18227 (-0.04), locale;1 (0.02), education;concentration;name;5264 (-0.02), education;type;0 (0.01)
+  Circle_5: education;school;name;20473 (-0.11), locale;1 (0.02), location;name;1286 (0.01), hometown;name;4526 (0.01), education;type;0 (0.01)
+
+==============================
+Ego ID: 26492
+Micro-F1: 0.8154 | Micro-AUC: 0.9573
+
+[Link Inference Attack - Ego 26492]
+  Avg Similarity (Connected)   : 0.9920
+  Avg Similarity (Unconnected) : 0.7385
+  => Attack AUC: 0.9592
+
+[Explanation for Ego 26492]
+  Circle_0: education;concentration;id;5527 (0.10), last_name;16624 (-0.02), education;year;name;14 (0.02), work;location;id;990 (0.01), hometown;name;317 (-0.01)
+  Circle_1: education;school;name;20523 (0.03), work;employer;id;18398 (-0.01), locale;1 (0.01), work;start_date;65 (0.00), education;year;id;35 (-0.00)
+  Circle_2: education;concentration;name;5307 (0.09), education;school;name;20558 (0.05), work;location;id;2401 (0.03), locale;1 (0.02), location;name;2676 (-0.02)
+  Circle_3: locale;1 (0.29), education;type;0 (0.20), education;school;id;21856 (0.18), education;school;name;20520 (0.18), gender;1 (0.16)
+  Circle_4: locale;1 (0.08), gender;1 (0.05), education;degree;name;1361 (0.02), education;type;1 (0.02), education;type;0 (0.02)
+  Circle_5: education;school;id;21952 (-0.07), work;from;name;424 (-0.04), locale;1 (0.04), work;position;id;184 (-0.03), location;id;2686 (-0.03)
+  Circle_6: work;employer;name;17770 (0.09), work;position;name;7777 (0.07), name;26378 (0.04), hometown;id;516 (0.02), work;employer;id;18407 (-0.01)
+  Circle_7: hometown;id;4544 (0.02), middle_name;587 (-0.01), work;employer;id;18524 (-0.01), education;concentration;name;5314 (0.00), work;employer;name;17657 (0.00)
+  Circle_8: location;name;3198 (0.10), location;name;154 (0.00), birthday;27 (0.00), education;concentration;id;906 (-0.00), education;with;name;4703 (-0.00)
+  Circle_9: languages;id;40 (0.05), locale;1 (0.01), education;year;id;38 (0.01), work;employer;id;18394 (0.01), last_name;2859 (-0.01)
+  Circle_10: work;location;name;2362 (0.03), work;position;id;665 (-0.03), work;employer;name;17619 (0.01), birthday;6932 (-0.01), work;position;name;6620 (-0.01)
+  Circle_11: hometown;name;4548 (0.02), work;end_date;100 (0.01), id;26611 (0.00), work;employer;name;17832 (0.00), work;employer;name;17779 (0.00)
+  Circle_12: work;position;name;7753 (0.18), id;26765 (0.16), last_name;16559 (-0.06), work;employer;name;17763 (0.05), id;26502 (0.02)
+  Circle_13: locale;1 (0.07), education;year;name;9 (0.05), gender;1 (0.04), education;type;1 (0.03), education;type;0 (0.03)
+  Circle_14: education;year;id;46 (-0.04), birthday;4367 (0.04), work;employer;id;18412 (-0.02), locale;1 (0.02), birthday;6914 (-0.02)
+  Circle_15: locale;1 (0.03), work;position;name;1895 (0.01), education;type;1 (0.01), gender;0 (0.01), education;type;0 (0.01)
+
+==============================
+Ego ID: 27022
+Micro-F1: 0.8633 | Micro-AUC: 0.9424
+
+[Link Inference Attack - Ego 27022]
+  Avg Similarity (Connected)   : 0.9467
+  Avg Similarity (Unconnected) : 0.7238
+  => Attack AUC: 0.7835
+
+[Explanation for Ego 27022]
+  Circle_0: locale;1 (0.26), gender;0 (0.21), education;type;2 (0.19), education;type;1 (0.17), education;type;0 (0.17)
+  Circle_1: locale;1 (0.10), education;type;2 (0.07), education;type;1 (0.07), education;type;0 (0.05), gender;0 (0.05)
+  Circle_2: locale;1 (0.30), education;type;2 (0.22), gender;0 (0.22), education;type;1 (0.21), education;school;name;20735 (0.20)
+  Circle_3: education;year;id;4 (0.11), work;employer;name;17967 (-0.04), education;concentration;name;5399 (0.02), education;school;id;2848 (0.02), hometown;name;1312 (0.01)
+  Circle_4: locale;1 (0.08), education;type;1 (0.05), gender;0 (0.05), education;school;name;815 (0.04), education;type;2 (0.04)

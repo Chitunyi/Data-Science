@@ -6,8 +6,17 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch_geometric.data import Data
 from torch_geometric.nn import GCNConv
-from sklearn.metrics import f1_score, roc_auc_score
+from sklearn.metrics import f1_score, roc_auc_score, confusion_matrix
 import glob
+from torch_geometric.utils import negative_sampling
+import pandas as pd
+import warnings
+from tqdm import tqdm
+
+# Filter warnings
+warnings.filterwarnings("ignore", category=UserWarning) 
+from sklearn.exceptions import UndefinedMetricWarning
+warnings.filterwarnings("ignore", category=UndefinedMetricWarning)
 
 # -----------------------------
 # Utility
@@ -23,14 +32,12 @@ def set_seed(seed=42):
 # Data Loader
 # -----------------------------
 def load_kaggle_ego_graph_global_features(root_dir, ego_id):
-    print(f"Loading Ego-net: {ego_id}...")
-
     edge_path = os.path.join(root_dir, "egonets", f"{ego_id}.egonet")
     circle_path = os.path.join(root_dir, "Training", f"{ego_id}.circles")
     feat_path = os.path.join(root_dir, "features.txt")
 
     if not (os.path.exists(edge_path) and os.path.exists(circle_path)):
-        raise FileNotFoundError(f"Missing egonet or circle file for ego {ego_id}")
+        raise FileNotFoundError()
 
     # --- Read Edges ---
     nodes = set([ego_id])
@@ -130,29 +137,53 @@ def load_kaggle_ego_graph_global_features(root_dir, ego_id):
 # Metric Calculation
 # -----------------------------
 def compute_auc_scores(y_true, y_score):
-    """
-    y_true: (N, K)
-    y_score: (N, K)
-    """
     try:
         macro_auc = roc_auc_score(y_true, y_score, average='macro')
         micro_auc = roc_auc_score(y_true, y_score, average='micro')
     except ValueError:
-        # 當測試集中某個類別完全沒有正樣本或負樣本時，AUC 無法計算
         macro_auc = 0.5
         micro_auc = 0.5
 
     K = y_true.shape[1]
     per_class_auc = []
     for k in range(K):
-        # 檢查該類別在測試集中是否同時存在 0 和 1
         if len(np.unique(y_true[:, k])) == 2:
             auc_k = roc_auc_score(y_true[:, k], y_score[:, k])
         else:
-            auc_k = 0.5 # 無法計算時給預設值
+            auc_k = 0.5 
         per_class_auc.append(auc_k)
 
     return micro_auc, macro_auc, per_class_auc
+
+
+def compute_ber_score(y_true, y_pred):
+    """
+    calculate Balanced Error Rate (BER)
+    BER = 0.5 * (False Negative Rate + False Positive Rate)
+    Lower is better.
+    """
+    K = y_true.shape[1]
+    ber_list = []
+    
+    for k in range(K):
+        if len(np.unique(y_true[:, k])) < 2:
+            # edge case
+            ber_list.append(0.5) 
+            continue
+
+        # confusion_matrix requires binary inputs (0 or 1)
+        tn, fp, fn, tp = confusion_matrix(y_true[:, k], y_pred[:, k], labels=[0, 1]).ravel()
+        
+        # FN Rate = FN / (TP + FN)  
+        fn_rate = fn / (tp + fn) if (tp + fn) > 0 else 0
+        
+        # FP Rate = FP / (TN + FP)  
+        fp_rate = fp / (tn + fp) if (tn + fp) > 0 else 0
+        
+        ber = 0.5 * (fn_rate + fp_rate)
+        ber_list.append(ber)
+
+    return np.mean(ber_list)
 
 # -----------------------------
 # Model
@@ -161,43 +192,29 @@ class GNN(nn.Module):
     def __init__(self, in_channels, hidden_channels, num_circles):
         super().__init__()
         
-        # 1. GNN Backbone (Structure Encoding)
         self.conv1 = GCNConv(in_channels, hidden_channels)
         self.conv2 = GCNConv(hidden_channels, hidden_channels)
         self.classifier = nn.Linear(hidden_channels, num_circles)
-
-        # 2. Explainable Prototypes (Feature Templates)
-        # [num_circles, in_channels] - 與 Input Feature 維度一致
         self.prototypes = nn.Parameter(torch.randn(num_circles, in_channels))
 
     def forward(self, x, edge_index):
-        # --- Prediction Path ---
         h = F.relu(self.conv1(x, edge_index))
         h = F.dropout(h, p=0.5, training=self.training)
         h = self.conv2(h, edge_index)
         
         logits = self.classifier(h)
-        probs = torch.sigmoid(logits) # Multi-label probability [N, K]
+        probs = torch.sigmoid(logits) 
 
-        # --- Reconstruction Path ---
-        # 重建邏輯：用預測出的圈子機率，混合對應的 Prototype
-        # [N, K] @ [K, F] -> [N, F]
         recon_x = probs @ self.prototypes
         
         return logits, recon_x
 
     def get_circle_explanation(self, feature_names, top_k=5):
-        """
-        回傳每個圈子最重要的 input feature。
-        """
         explanations = {}
         with torch.no_grad():
-            # 轉到 CPU 讀取數值
             weights = self.prototypes.cpu().numpy()
             
             for k in range(weights.shape[0]):
-                # 排序：取絕對值最大的 top_k (無論正負都代表該特徵對該圈子定義很重要)
-                # 使用 [::-1] 反轉，變成從大到小
                 top_indices = np.argsort(np.abs(weights[k]))[::-1][:top_k]
                 
                 circle_features = []
@@ -210,62 +227,103 @@ class GNN(nn.Module):
         return explanations
 
 # -----------------------------
+# Link Inference Attack (Return string instead of print)
+# -----------------------------
+def link_inference_attack(model, data, ego_id):
+    """
+    Returns (attack_auc, log_string)
+    """
+    log_buf = []
+    log_buf.append(f"\n[Link Inference Attack - Ego {ego_id}]")
+    
+    model.eval()
+    with torch.no_grad():
+        h = F.relu(model.conv1(data.x, data.edge_index))
+        h = model.conv2(h, data.edge_index) 
+        
+        pos_edge_index = data.edge_index
+        num_pos = pos_edge_index.shape[1]
+        perm = torch.randperm(num_pos)[:1000]
+        pos_edges = pos_edge_index[:, perm]
+        
+        neg_edge_index = negative_sampling(data.edge_index, num_nodes=data.num_nodes, num_neg_samples=4000)
+        
+        def compute_similarity(edges, embeddings):
+            u, v = edges[0], edges[1]
+            emb_u = embeddings[u]
+            emb_v = embeddings[v]
+            return F.cosine_similarity(emb_u, emb_v).cpu().numpy()
+            
+        pos_scores = compute_similarity(pos_edges, h)
+        neg_scores = compute_similarity(neg_edge_index, h)
+        
+        log_buf.append(f"  Avg Similarity (Connected)   : {np.mean(pos_scores):.4f}")
+        log_buf.append(f"  Avg Similarity (Unconnected) : {np.mean(neg_scores):.4f}")
+        
+        y_true = np.concatenate([np.ones(len(pos_scores)), np.zeros(len(neg_scores))])
+        y_scores = np.concatenate([pos_scores, neg_scores])
+        
+        if len(np.unique(y_true)) < 2:
+            attack_auc = 0.5
+        else:
+            attack_auc = roc_auc_score(y_true, y_scores)
+        
+        log_buf.append(f"  => Attack AUC: {attack_auc:.4f}")
+        
+    return attack_auc, "\n".join(log_buf)
+
+# -----------------------------
 # Experiment Runner
 # -----------------------------
 def run_experiment():
-    set_seed(42)
+    set_seed(40)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     current_file_path = os.path.abspath(__file__)
     root_dir = os.path.dirname(current_file_path)
 
     egonet_files = glob.glob(os.path.join(root_dir, "egonets", "*.egonet"))
-    # 取前幾個測試即可，全部跑完可能太久
-    ego_ids = sorted([int(os.path.basename(f).split('.')[0]) for f in egonet_files])[:5] 
+    ego_ids = sorted([int(os.path.basename(f).split('.')[0]) for f in egonet_files])
+   
+    print(f"Found {len(ego_ids)} ego-nets.")
+    
+    # Initialize Log File
+    with open("log.txt", "w") as f:
+        f.write("Experiment Log\n================\n")
 
-    print(f"Found {len(ego_ids)} ego-nets (processing subset).")
+    results_summary = {
+        'ego_id': [],
+        'f1_micro': [],
+        'auc_micro': [],
+        'balanced_Error_Rate':[],
+        'link_attack_auc': []
+    }
 
-    f1_scores = []
-
-    for ego_id in ego_ids:
+    for ego_id in tqdm(ego_ids):
         try:
             data = load_kaggle_ego_graph_global_features(root_dir, ego_id)
         except Exception as e:
-            print(f"Skip {ego_id}: {e}")
             continue
         
         data = data.to(device)
 
         model = GNN(
             in_channels=data.num_features,
-            hidden_channels=64,
+            hidden_channels=128,
             num_circles=data.num_circles
         ).to(device)
 
-        optimizer = torch.optim.Adam(model.parameters(), lr=0.01, weight_decay=5e-4) # LR稍微調大一點加速收斂
+        optimizer = torch.optim.Adam(model.parameters(), lr=0.006, weight_decay=5e-4)
         
-        # Hyperparameters for explanation
-        alpha = 1.0     # Reconstruction weight
-        beta = 1e-3     # L1 Sparsity weight
-
         # Training
-        print(f"Training Ego {ego_id}...")
-        for epoch in range(200):
+        for epoch in range(1300):
             model.train()
             optimizer.zero_grad()
-            
             logits, recon_x = model(data.x, data.edge_index)
-            
-            # 1. Classification Loss (Multi-label)
             loss_cls = F.binary_cross_entropy_with_logits(logits[data.train_mask], data.y[data.train_mask])
-            
-            # 2. Reconstruction Loss (只對 Training set 做特徵對齊)
             loss_recon = F.mse_loss(recon_x[data.train_mask], data.x[data.train_mask])
-            
-            # 3. L1 Sparsity (針對 Prototypes)
             loss_l1 = torch.norm(model.prototypes, p=1)
-
-            total_loss = loss_cls + alpha * loss_recon + beta * loss_l1
+            total_loss = loss_cls + 1.0 * loss_recon + 1e-5 * loss_l1
             total_loss.backward()
             optimizer.step()
             
@@ -280,31 +338,54 @@ def run_experiment():
             y_prob = prob[data.test_mask].cpu().numpy()
             y_pred = pred[data.test_mask].cpu().numpy()
 
-            # Metric Calculation
-            if y_true.shape[0] > 0: # 確保有測試數據
-                micro_auc, macro_auc, per_class_auc = compute_auc_scores(y_true, y_prob)
+            if y_true.shape[0] > 0:
+                micro_auc, macro_auc, _ = compute_auc_scores(y_true, y_prob)
+                
+                # [FIXED] Use y_pred (binary) instead of y_prob (continuous) for BER
+                ber_score = compute_ber_score(y_true, y_pred)
+                
                 f1_micro = f1_score(y_true, y_pred, average="micro")
 
-                print(f"[Ego {ego_id}] Micro-F1: {f1_micro:.4f} | Micro-AUC: {micro_auc:.4f}")
-                f1_scores.append(f1_micro)
-            else:
-                print(f"[Ego {ego_id}] No test data available.")
+                # Attack
+                attack_auc, attack_log = link_inference_attack(model, data, ego_id)
+                
+                # Collect Results
+                results_summary['ego_id'].append(ego_id)
+                results_summary['f1_micro'].append(f1_micro)
+                results_summary['auc_micro'].append(micro_auc)
+                results_summary['balanced_Error_Rate'].append(ber_score)
+                results_summary['link_attack_auc'].append(attack_auc)
+                
+                # --- Write to log.txt ---
+                with open("log.txt", "a") as f:
+                    f.write(f"\n{'='*30}\n")
+                    f.write(f"Ego ID: {ego_id}\n")
+                    f.write(f"Micro-F1: {f1_micro:.4f} | Micro-AUC: {micro_auc:.4f}\n")
+                    f.write(attack_log + "\n")
+                    f.write(f"\n[Explanation for Ego {ego_id}]\n")
+                    
+                    explanations = model.get_circle_explanation(data.sorted_features, top_k=5)
+                    for circle_name, features in explanations.items():
+                        feat_str = ", ".join([f"{name} ({val:.2f})" for name, val in features])
+                        f.write(f"  {circle_name}: {feat_str}\n")
 
-        # -----------------------------
-        # Feature Explanation Output
-        # -----------------------------
-        print(f"\n[Explanation for Ego {ego_id}]")
-        explanations = model.get_circle_explanation(data.sorted_features, top_k=5)
-        
-        for circle_name, features in explanations.items():
-            # 組合字串： "FeatureName (Weight)"
-            feat_str = ", ".join([f"{name} ({val:.2f})" for name, val in features])
-            print(f"  {circle_name}: {feat_str}")
-        print("-" * 50)
-
-    print("\n===== Final Report =====")
-    if f1_scores:
-        print(f"Average F1 = {np.mean(f1_scores):.4f}")
+    # -----------------------------
+    # Final Terminal Output
+    # -----------------------------
+    print("\n" + "="*60)
+    print("OVERALL PERFORMANCE SUMMARY")
+    print("="*60)
+    
+    if results_summary['ego_id']:
+        df = pd.DataFrame(results_summary)
+        print(df.to_string(index=False))
+        print("-" * 60)
+        print(f"Average Micro-F1      : {df['f1_micro'].mean():.4f}")
+        print(f"Average Micro-AUC     : {df['auc_micro'].mean():.4f}")
+        # [FIXED] Use correct key 'balanced_Error_Rate'
+        print(f"Average BER           : {df['balanced_Error_Rate'].mean():.4f} (Lower is better)")
+        print(f"Average Link Attack AUC: {df['link_attack_auc'].mean():.4f}")
+        print("\nNote: Detailed explanations and attack logs are saved in 'log.txt'.")
     else:
         print("No successful runs.")
 
