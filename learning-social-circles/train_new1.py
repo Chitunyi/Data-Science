@@ -1,12 +1,12 @@
 import os
 import random
-import numpy as np
+import matplotlib.pyplot as plt
 import torch
-import torch.nn as nn
+import numpy as np
 import torch.nn.functional as F
 from torch_geometric.data import Data
-from torch_geometric.nn import GCNConv
-from sklearn.metrics import f1_score, roc_auc_score, confusion_matrix
+from model import GNN, LogisticRegressionBaseline, MLPBaseline, GNN_origin
+from sklearn.metrics import f1_score, roc_auc_score, confusion_matrix, precision_recall_curve, average_precision_score
 import glob
 from torch_geometric.utils import negative_sampling
 import pandas as pd
@@ -133,6 +133,44 @@ def load_kaggle_ego_graph_global_features(root_dir, ego_id):
     )
     return data
 
+def filter_features_by_support(data, min_count=2, max_frac=1.0):
+    """
+    根據 feature 在節點上的出現次數做篩選：
+      - min_count: 至少要在多少個節點上出現，才保留
+      - max_frac:  最多允許在多少比例的節點上出現（例如 0.95），> 這個比例就太常見，可以選擇砍掉
+
+    data.x: [num_nodes, num_features] 的 0/1 tensor
+    data.sorted_features: 長度為 num_features 的 feature name list
+    """
+    x = data.x  # [N, D]
+    counts = x.sum(dim=0)              # [D] 每個 feature 在幾個 node 上是 1
+    N = x.size(0)
+    max_count = max_frac * N
+
+    keep_mask = (counts >= min_count) & (counts <= max_count)
+
+    keep_indices = keep_mask.nonzero(as_tuple=False).view(-1)
+
+    # 如果全部被砍光，避免爆炸，直接回原 data
+    if keep_indices.numel() == 0:
+        return data
+
+    x_new = x[:, keep_indices]
+    new_feature_names = [data.sorted_features[i] for i in keep_indices.tolist()]
+
+    data_new = Data(
+        x=x_new,
+        edge_index=data.edge_index,
+        y=data.y,
+        num_nodes=data.num_nodes,
+        num_features=x_new.size(1),
+        num_circles=data.num_circles,
+        train_mask=data.train_mask,
+        test_mask=data.test_mask,
+        sorted_features=new_feature_names,
+    )
+    return data_new
+
 # -----------------------------
 # Metric Calculation
 # -----------------------------
@@ -185,92 +223,7 @@ def compute_ber_score(y_true, y_pred):
 
     return np.mean(ber_list)
 
-# -----------------------------
-# Model
-# -----------------------------
-class GNN(nn.Module):
-    def __init__(self, in_channels, hidden_channels, num_circles):
-        super().__init__()
-        
-        self.conv1 = GCNConv(in_channels, hidden_channels)
-        self.conv2 = GCNConv(hidden_channels, hidden_channels)
-        self.classifier = nn.Linear(hidden_channels, num_circles)
-        self.prototypes = nn.Parameter(torch.randn(num_circles, in_channels))
 
-    def forward(self, x, edge_index):
-        h = F.relu(self.conv1(x, edge_index))
-        h = F.dropout(h, p=0.5, training=self.training)
-        h = self.conv2(h, edge_index)
-        
-        logits = self.classifier(h)
-        probs = torch.sigmoid(logits) 
-
-        recon_x = probs @ self.prototypes
-        
-        return logits, recon_x
-
-    def get_circle_explanation(self, feature_names, top_k=5):
-        explanations = {}
-        with torch.no_grad():
-            weights = self.prototypes.cpu().numpy()
-            
-            for k in range(weights.shape[0]):
-                top_indices = np.argsort(np.abs(weights[k]))[::-1][:top_k]
-                
-                circle_features = []
-                for idx in top_indices:
-                    importance = weights[k][idx]
-                    feat_name = feature_names[idx] if idx < len(feature_names) else f"Feat_{idx}"
-                    circle_features.append((feat_name, importance))
-                
-                explanations[f"Circle_{k}"] = circle_features
-        return explanations
-
-# -----------------------------
-# Link Inference Attack (Return string instead of print)
-# -----------------------------
-def link_inference_attack(model, data, ego_id):
-    """
-    Returns (attack_auc, log_string)
-    """
-    log_buf = []
-    log_buf.append(f"\n[Link Inference Attack - Ego {ego_id}]")
-    
-    model.eval()
-    with torch.no_grad():
-        h = F.relu(model.conv1(data.x, data.edge_index))
-        h = model.conv2(h, data.edge_index) 
-        
-        pos_edge_index = data.edge_index
-        num_pos = pos_edge_index.shape[1]
-        perm = torch.randperm(num_pos)[:1000]
-        pos_edges = pos_edge_index[:, perm]
-        
-        neg_edge_index = negative_sampling(data.edge_index, num_nodes=data.num_nodes, num_neg_samples=4000)
-        
-        def compute_similarity(edges, embeddings):
-            u, v = edges[0], edges[1]
-            emb_u = embeddings[u]
-            emb_v = embeddings[v]
-            return F.cosine_similarity(emb_u, emb_v).cpu().numpy()
-            
-        pos_scores = compute_similarity(pos_edges, h)
-        neg_scores = compute_similarity(neg_edge_index, h)
-        
-        log_buf.append(f"  Avg Similarity (Connected)   : {np.mean(pos_scores):.4f}")
-        log_buf.append(f"  Avg Similarity (Unconnected) : {np.mean(neg_scores):.4f}")
-        
-        y_true = np.concatenate([np.ones(len(pos_scores)), np.zeros(len(neg_scores))])
-        y_scores = np.concatenate([pos_scores, neg_scores])
-        
-        if len(np.unique(y_true)) < 2:
-            attack_auc = 0.5
-        else:
-            attack_auc = roc_auc_score(y_true, y_scores)
-        
-        log_buf.append(f"  => Attack AUC: {attack_auc:.4f}")
-        
-    return attack_auc, "\n".join(log_buf)
 
 # -----------------------------
 # Experiment Runner
@@ -292,31 +245,46 @@ def run_experiment():
         f.write("Experiment Log\n================\n")
 
     results_summary = {
-        'ego_id': [],
-        'f1_micro': [],
-        'auc_micro': [],
-        'balanced_Error_Rate':[],
-        'link_attack_auc': []
+    'ego_id': [],
+    'f1_micro': [],
+    'auc_micro': [],
+    'balanced_Error_Rate':[],
+    # [NEW] Add Average Precision (AP) for each ego
+    'ap_micro': [] 
     }
-
+    total_orig_dim = 0
+    total_filt_dim  = 0
+    all_y_true = []
+    all_y_prob = []
+    
+    # ---------------------------------------------
+    # Main Loop
+    # ---------------------------------------------
     for ego_id in tqdm(ego_ids):
         try:
             data = load_kaggle_ego_graph_global_features(root_dir, ego_id)
         except Exception as e:
             continue
         
+        data_cpu = filter_features_by_support(data, min_count=2, max_frac=1.0)
+        orig_dim = data.num_features
+        filt_dim = data_cpu.num_features
+        
+        total_orig_dim += orig_dim
+        total_filt_dim += filt_dim
+        
         data = data.to(device)
 
         model = GNN(
             in_channels=data.num_features,
-            hidden_channels=128,
+            hidden_channels=32,
             num_circles=data.num_circles
         ).to(device)
 
         optimizer = torch.optim.Adam(model.parameters(), lr=0.006, weight_decay=5e-4)
         
         # Training
-        for epoch in range(1300):
+        for epoch in range(1000):
             model.train()
             optimizer.zero_grad()
             logits, recon_x = model(data.x, data.edge_index)
@@ -332,7 +300,7 @@ def run_experiment():
         with torch.no_grad():
             logits, _ = model(data.x, data.edge_index)
             prob = torch.sigmoid(logits)              
-            pred = (prob > 0.5).float()               
+            pred = (prob > 0.2).float()               
 
             y_true = data.y[data.test_mask].cpu().numpy()
             y_prob = prob[data.test_mask].cpu().numpy()
@@ -341,34 +309,41 @@ def run_experiment():
             if y_true.shape[0] > 0:
                 micro_auc, macro_auc, _ = compute_auc_scores(y_true, y_prob)
                 
-                # [FIXED] Use y_pred (binary) instead of y_prob (continuous) for BER
+                # [NEW] Calculate Micro-Average Precision Score (AP)
+                try:
+                    micro_ap = average_precision_score(y_true, y_prob, average='micro')
+                except ValueError:
+                    micro_ap = 0.0 # Handle case where only one class is present
+                
+                all_y_true.append(y_true)
+                all_y_prob.append(y_prob)
                 ber_score = compute_ber_score(y_true, y_pred)
                 
                 f1_micro = f1_score(y_true, y_pred, average="micro")
 
-                # Attack
-                attack_auc, attack_log = link_inference_attack(model, data, ego_id)
+          
                 
                 # Collect Results
                 results_summary['ego_id'].append(ego_id)
                 results_summary['f1_micro'].append(f1_micro)
                 results_summary['auc_micro'].append(micro_auc)
                 results_summary['balanced_Error_Rate'].append(ber_score)
-                results_summary['link_attack_auc'].append(attack_auc)
+                # [NEW] Collect Micro-AP
+                results_summary['ap_micro'].append(micro_ap)
+
                 
                 # --- Write to log.txt ---
                 with open("log.txt", "a") as f:
                     f.write(f"\n{'='*30}\n")
                     f.write(f"Ego ID: {ego_id}\n")
-                    f.write(f"Micro-F1: {f1_micro:.4f} | Micro-AUC: {micro_auc:.4f}\n")
-                    f.write(attack_log + "\n")
+                    f.write(f"Micro-F1: {f1_micro:.4f} | Micro-AUC: {micro_auc:.4f} | Micro-AP: {micro_ap:.4f}\n")
                     f.write(f"\n[Explanation for Ego {ego_id}]\n")
                     
                     explanations = model.get_circle_explanation(data.sorted_features, top_k=5)
                     for circle_name, features in explanations.items():
                         feat_str = ", ".join([f"{name} ({val:.2f})" for name, val in features])
                         f.write(f"  {circle_name}: {feat_str}\n")
-
+    
     # -----------------------------
     # Final Terminal Output
     # -----------------------------
@@ -376,18 +351,110 @@ def run_experiment():
     print("OVERALL PERFORMANCE SUMMARY")
     print("="*60)
     
-    if results_summary['ego_id']:
-        df = pd.DataFrame(results_summary)
-        print(df.to_string(index=False))
-        print("-" * 60)
-        print(f"Average Micro-F1      : {df['f1_micro'].mean():.4f}")
-        print(f"Average Micro-AUC     : {df['auc_micro'].mean():.4f}")
-        # [FIXED] Use correct key 'balanced_Error_Rate'
-        print(f"Average BER           : {df['balanced_Error_Rate'].mean():.4f} (Lower is better)")
-        print(f"Average Link Attack AUC: {df['link_attack_auc'].mean():.4f}")
-        print("\nNote: Detailed explanations and attack logs are saved in 'log.txt'.")
-    else:
-        print("No successful runs.")
+
+    df = pd.DataFrame(results_summary)
+    print(df.to_string(index=False))
+    print("-" * 60)
+    print(f"Average Micro-F1      : {df['f1_micro'].mean():.4f}")
+    print(f"Average Micro-AUC     : {df['auc_micro'].mean():.4f}")
+    # [NEW] Print Average Micro-AP
+    print(f"Average Micro-AP      : {df['ap_micro'].mean():.4f}") 
+    print(f"Average BER           : {df['balanced_Error_Rate'].mean():.4f} (Lower is better)")
+    overall_removed = 1.0 - (total_filt_dim / total_orig_dim)
+    print(f"Weighted feature removal ratio : {overall_removed:.2%}")
+
+    # -----------------------------
+    # Threshold Analysis & Plotting
+    # -----------------------------
+    
+    # 要掃的 threshold 範圍
+    thresholds = np.linspace(0.1, 0.9, 17)  # 0.1, 0.15, ..., 0.9
+    f1_curve = []
+    ber_curve = []
+
+    if len(all_y_true) > 0:  # 確保真的有資料
+        
+        # ---------------------------------------------
+        # Threshold Scanning for F1 and BER
+        # ---------------------------------------------
+        for t in thresholds:
+            f1_list = []
+            ber_list = []
+
+            # 對每個 ego
+            for y_true, y_prob in zip(all_y_true, all_y_prob):
+                # thresholding
+                y_pred = (y_prob > t).astype(float)
+
+                # F1
+                f1_list.append(f1_score(y_true, y_pred, average="micro"))
+
+                # BER
+                ber_list.append(compute_ber_score(y_true, y_pred))
+
+            # 取每個 threshold 下，各 ego 的平均
+            f1_curve.append(np.mean(f1_list))
+            ber_curve.append(np.mean(ber_list))
+
+        # 找出 F1 最好的 threshold
+        best_idx = int(np.argmax(f1_curve))
+        print(f"\nBest threshold (by Micro-F1): {thresholds[best_idx]:.2f}, F1 = {f1_curve[best_idx]:.4f}")
+        # 找出 BER 最小的 threshold
+        best_ber_idx = int(np.argmin(ber_curve))
+        print(f"Best threshold (by BER)      : {thresholds[best_ber_idx]:.2f}, BER = {ber_curve[best_ber_idx]:.4f}")
+
+        # 1) F1 vs threshold
+        plt.figure()
+        plt.plot(thresholds, f1_curve, marker='o')
+        plt.xlabel("Threshold")
+        plt.ylabel("Micro-F1")
+        plt.title("Micro-F1 vs Threshold")
+        plt.grid(True)
+        plt.tight_layout()
+        plt.savefig("f1_vs_threshold.png", dpi=300)
+
+        # 2) BER vs threshold
+        plt.figure()
+        plt.plot(thresholds, ber_curve, marker='o')
+        plt.xlabel("Threshold")
+        plt.ylabel("BER (lower is better)")
+        plt.title("Balanced Error Rate vs Threshold")
+        plt.grid(True)
+        plt.tight_layout()
+        plt.savefig("ber_vs_threshold.png", dpi=300)
+
+        # ---------------------------------------------
+        # [NEW] Precision-Recall Curve Plotting
+        # ---------------------------------------------
+        
+        # Combine all test results
+        all_y_true_flat = [arr.ravel() for arr in all_y_true]
+        all_y_prob_flat = [arr.ravel() for arr in all_y_prob]
+
+        Y_true_flat = np.concatenate(all_y_true_flat)
+        Y_prob_flat = np.concatenate(all_y_prob_flat)
+
+        # Compute Precision-Recall curve
+        precision, recall, _ = precision_recall_curve(Y_true_flat, Y_prob_flat)
+        
+        # Compute Area Under the PR Curve (Average Precision) for the overall dataset
+        overall_ap = average_precision_score(Y_true_flat, Y_prob_flat)
+        print(f"Overall Micro Average Precision (AP): {overall_ap:.4f}")
+
+        # Plot PR Curve
+        plt.figure()
+        # [NOTE] Baseline for PR curve is the ratio of positive samples (P / (P+N))
+        baseline = np.sum(Y_true_flat) / len(Y_true_flat)
+        plt.plot([0, 1], [baseline, baseline], linestyle='--', label=f'Random Baseline (AP={baseline:.4f})')
+        plt.plot(recall, precision, marker='.', markersize=1, label=f'Model (AP={overall_ap:.4f})')
+        
+        plt.xlabel('Recall')
+        plt.ylabel('Precision')
+        plt.title('Precision-Recall Curve (Overall Micro-Average)')
+        plt.legend()
+        plt.grid(True)
+        plt.tight_layout()
+        plt.savefig("pr_curve_micro.png", dpi=300)
 
 if __name__ == "__main__":
     run_experiment()
