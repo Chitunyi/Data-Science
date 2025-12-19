@@ -2,3 +2,6 @@ torch
 numpy
 torch_geometric
 scikit-metrics
+pandas
+tqdm
+matplotlib
