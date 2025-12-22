@@ -19,15 +19,17 @@ pip install -r requirements.txt
 
 ## Project Structure
 
+```text
 learning-social-circles/
 ├── egonets/               # Ego-network datasets
 ├── Training/              # Ego-network labels
 ├── model.py               # Vanilla GNN, MLP, and baseline models
 ├── util.py                # Utility functions (metrics, visualization, data processing)
-├── unsupervise.py         # Unsupervised GAE + DBSCAN 
+├── unsupervise.py         # Unsupervised GAE + DBSCAN
 ├── supervise_GNN.py       # Supervised GNN training and evaluation
 ├── requirements.txt
 └── README.md
+
 # for the unsupervise learning model 
 
 python unsupervise.py
