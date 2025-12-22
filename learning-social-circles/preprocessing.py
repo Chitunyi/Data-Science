@@ -11,7 +11,7 @@ DROP_PREFIXES = [
     "work;description",
     "work;projects;description",
 
-    # 3) 各種 ...;id 類（底下這些 prefix，包含後面還跟著實際值的情況）
+
     "education;classes;id",
     "education;concentration;id",
     "education;degree;id",

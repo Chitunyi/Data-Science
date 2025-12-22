@@ -25,6 +25,11 @@ class GNN(nn.Module):
         
         return logits, recon_x
 
+    def get_embedding(self, x, edge_index):
+        h = F.relu(self.conv1(x, edge_index))
+        h = self.conv2(h, edge_index)
+        return h
+
     def get_circle_explanation(self, feature_names, top_k=5):
         explanations = {}
         with torch.no_grad():
